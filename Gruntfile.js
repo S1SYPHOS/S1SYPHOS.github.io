@@ -293,19 +293,19 @@ module.exports = function(grunt) {
     grunt.registerTask('prod', [
       'sass',
       'jekyll:prod',
-      'modernizr',
-      'useminPrepare',
-      'concat',
-      'autoprefixer',
-      'csscomb',
-      'cssmin',
-      'uglify',
-      'usemin',
-      'cacheBust',
+      // 'modernizr',
+      // 'useminPrepare',
+      // 'concat',
+      // 'autoprefixer',
+      // 'csscomb',
+      // 'cssmin',
+      // 'uglify',
+      // 'usemin',
+      // 'cacheBust',
       'htmlmin'
     ]);
 
-    grunt.registerTask('deploy', [
+    grunt.registerTask('upload', [
       'check',
       'prod',
       'buildcontrol'
