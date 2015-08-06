@@ -1,1 +1,2 @@
-environment:        production
+url:                 http://daktylos.net
+environment:         production

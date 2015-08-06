@@ -1,19 +1,19 @@
 {
-  "name": "jekyll-susy-starter-kit",
-  "version": "1.0.0",
-  "description": "Jekyll+Susy Starter Kit",
+  "name": "S1SYPHOS.github.io",
+  "version": "0.0.1",
+  "description": "S1SYPHOS.github.io",
   "author": "S1SYPHOS <hello@daktylos.net>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/S1SYPHOS/Jekyll-Susy-Starter-Kit"
+    "url": "https://github.com/S1SYPHOS/S1SYPHOS.github.io"
   },
   "bugs": {
-    "url": "https://github.com/S1SYPHOS/Jekyll-Susy-Starter-Kit/issues"
+    "url": "https://github.com/S1SYPHOS/S1SYPHOS.github.io/issues"
   },
   "private": true,
   "license": {
     "type": "MIT",
-    "url": "https://github.com/S1SYPHOS/Jekyll-Susy-Starter-Kit/blob/master/LICENSE.txt"
+    "url": "https://github.com/S1SYPHOS/S1SYPHOS.github.io/blob/master/LICENSE.txt"
 },
   "dependencies": {},
   "devDependencies": {
