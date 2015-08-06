@@ -1,0 +1,43 @@
+// IMPORTS
+@import '../../bower_components/susy/sass/susy';
+@import '../../bower_components/breakpoint-sass/stylesheets/breakpoint';
+
+// SUSY-MAP - http://susy.readthedocs.org/en/latest/settings/
+$susy: (
+  // flow: ltr,
+  // math: fluid,
+  // output: float,
+  // gutter-position: after,
+  container: 320px,
+  // container-position: center,
+  columns: 12,
+  gutters: 0.25,
+  // column-width: false,
+  global-box-sizing: border-box,
+  last-flow: to,
+  debug: (
+    // image: show-columns,
+    // color: rgba(#66f, .25),
+    // output: background,
+    // toggle: bottom left,
+  ),
+  use-custom: (
+    // background-image: true,
+    // background-options: false,
+    // box-sizing: true,
+    // clearfix: false,
+    // rem: true,
+  )
+);
+
+body {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+  background-color: #000;
+
+}
+
+.container {
+  @include container;
+  margin-top: 25%;
+}
