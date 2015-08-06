@@ -66,7 +66,7 @@ module.exports = function(grunt) {
         tasks: ['sass', 'autoprefixer', 'penthouse']
       },
       jekyll: {
-        files: ['<%= config.source %>/**/*.html', '<%= config.source %>/css/*.css', '<%= config.source %>/js/*.js'],
+        files: ['Gruntfile.js', '<%= config.source %>/**/*.html', '<%= config.source %>/css/*.css', '<%= config.source %>/js/*.js'],
         tasks: ['jekyll:dev', 'modernizr']
       }
     },
@@ -92,6 +92,18 @@ module.exports = function(grunt) {
           '<%= config.source %>/_scss/vendor/_normalize.scss': 'bower_components/normalize.css/normalize.css'
         }
       },
+    },
+
+    buildcontrol: {
+      dist: {
+        options: {
+          dir: 'build',
+          remote: 'git@github.com:S1SYPHOS/S1SYPHOS.github.io.git',
+          branch: 'master',
+          commit: true,
+          push: true
+        }
+      }
     },
 
 
@@ -132,7 +144,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          '<%= config.source %>/css/style.css': '<%= config.source %>/_scss/style.scss'
+          '<%= config.source %>/_includes/style.css': '<%= config.source %>/_scss/style.scss'
         }
       }
     },
@@ -238,9 +250,8 @@ module.exports = function(grunt) {
         bundleExec: true,
         colorizeOutput: true,
         config: '.scss-lint.yml',
-        exclude: ['<%= config.source %>/_scss/_normalize.scss']
       },
-      check: '<%= config.source %>/_scss/**/*.scss'
+      check: '<%= config.source %>/_scss/*.scss'
     },
 
     jshint: {
@@ -263,10 +274,18 @@ module.exports = function(grunt) {
 
   });
 
+    grunt.registerTask('check', [
+      'devUpdate',
+      'jekyll:check',
+      'scsslint',
+      'jshint'
+    ]);
+
     grunt.registerTask('dev', [
       'sass',
       'jekyll:dev',
-      'modernizr',
+      // 'modernizr',
+      'htmlmin',
       'browserSync',
     	'watch'
     ]);
@@ -286,11 +305,10 @@ module.exports = function(grunt) {
       'htmlmin'
     ]);
 
-    grunt.registerTask('check', [
-      'devUpdate',
-      'jekyll:check',
-      'scsslint',
-      'jshint'
+    grunt.registerTask('deploy', [
+      'check',
+      'prod',
+      'buildcontrol'
     ]);
 
   };
