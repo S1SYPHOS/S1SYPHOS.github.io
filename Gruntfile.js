@@ -144,7 +144,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          '<%= config.source %>/_includes/style.css': '<%= config.source %>/_scss/style.scss'
+          '<%= config.source %>/css/style.css': '<%= config.source %>/_scss/style.scss'
         }
       }
     },
@@ -294,13 +294,13 @@ module.exports = function(grunt) {
       'sass',
       'jekyll:prod',
       // 'modernizr',
-      // 'useminPrepare',
-      // 'concat',
-      // 'autoprefixer',
-      // 'csscomb',
-      // 'cssmin',
-      // 'uglify',
-      // 'usemin',
+      'useminPrepare',
+      'concat',
+      'autoprefixer',
+      'csscomb',
+      'cssmin',
+      'uglify',
+      'usemin',
       // 'cacheBust',
       'htmlmin'
     ]);

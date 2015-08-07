@@ -5,7 +5,29 @@
   <meta name="description" content="{{ site.descripton }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <style>
-    {% include style.css %}
-  </style>
+  <!-- +++ WEBFONTS +++ -->
+  <script>
+    {% include fontloader.js %}
+    loadFont("webfonts", "/css/webfonts.woff.css", "/css/webfonts.woff2.css");
+  </script>
+  <noscript>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+  </noscript>
+
+  <!-- +++ CSS +++ -->
+  {% if site.environment == 'production' %}
+  <style>{% include critical.css %}</style>
+  <script>
+    {% include loadCSS.js %}
+    loadCSS("css/style.css");
+  </script>
+  <noscript>
+  {% endif %}
+   <!-- build:css(source) css/style.css -->
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+   <!-- endbuild -->
+  {% if site.environment == 'production' %}
+  </noscript>
+  {% endif %}
+
 </head>
