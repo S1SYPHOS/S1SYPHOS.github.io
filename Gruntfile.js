@@ -2,8 +2,15 @@ module.exports = function(grunt) {
 
   'use strict';
 
-  require('time-grunt')(grunt);
-  require('load-grunt-tasks')(grunt);
+  // CUSTOM JQUERY BUILT - http://developer.telerik.com/featured/trimming-jquery-grunt/
+  // !! LIST NEEDS TO BE EXPANDED !!
+  var version = "2.1.4",
+  exclude = [ "core/ready", "effects", "deprecated", "ajax/script", "ajax/jsonp", "event/alias", "wrap" ],
+  dest = "jquery-" + version + ".custom.js"
+  exclude.forEach(function( module, index ) {
+    exclude[ index ] = "-" + module;
+  });
+
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -206,6 +213,22 @@ module.exports = function(grunt) {
 
     // JAVASCRIPT SECTION
 
+    shell: {
+      jQuery: {
+        command: [
+          "cd source/js/vendor",
+          "git clone https://github.com/jquery/jquery.git",
+          "cd jquery",
+          "git checkout " + version,
+          "npm install",
+          "grunt custom:" + exclude.join( "," ),
+          "cd ../",
+          "cp jquery/dist/jquery.js " + dest,
+          "rm -rf jquery"
+        ].join( "&&" )
+      }
+    },
+
     modernizr: {
       dist: {
         'devFile' : 'bower_components/modernizr/modernizr.js',
@@ -291,6 +314,9 @@ module.exports = function(grunt) {
 
 
   });
+
+    require('time-grunt')(grunt);
+    require('load-grunt-tasks')(grunt);
 
     grunt.registerTask('check', [
       'devUpdate',
