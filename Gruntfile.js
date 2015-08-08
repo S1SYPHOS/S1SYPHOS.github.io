@@ -106,6 +106,24 @@ module.exports = function(grunt) {
       }
     },
 
+    pagespeed: {
+      options: {
+        nokey: true,
+        url: 'http://daktylos.net',
+        locale: 'en_GB'
+      },
+      desktop: {
+        options: {
+          strategy: 'desktop'
+        }
+      },
+      mobile: {
+        options: {
+          strategy: 'mobile'
+        }
+      }
+    },
+
 
     // USEMIN SECTION
 
