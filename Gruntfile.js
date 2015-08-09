@@ -53,9 +53,10 @@ module.exports = function(grunt) {
       dev: {
         bsFiles: {
           src : [
+            '<%= config.dest %>/*.html',
             '<%= config.dest %>/css/*.css',
             '<%= config.dest %>/js/*.js',
-            '<%= config.dest %>/*.html'
+            '<%= config.source %>/img/**/*.{jpg,png,svg,gif}'
           ]
         },
         options: {
@@ -73,8 +74,8 @@ module.exports = function(grunt) {
         tasks: ['sass', 'autoprefixer', 'penthouse']
       },
       jekyll: {
-        files: ['Gruntfile.js', '<%= config.source %>/**/*.html', '<%= config.source %>/css/*.css', '<%= config.source %>/js/*.js'],
-        tasks: ['jekyll:dev', 'modernizr']
+        files: ['Gruntfile.js', '<%= config.source %>/**/*.{html,md,css,js}'],
+        tasks: ['jekyll:dev']
       }
     },
 
@@ -89,16 +90,11 @@ module.exports = function(grunt) {
           '<%= config.source %>/_includes/loadCSS.js': 'bower_components/loadcss/loadCSS.js'
         }
       },
-      jQuery: {
-        files: {
-          '<%= config.source %>/js/vendor/jquery.js': 'bower_components/jquery/dist/jquery.js'
-        }
-      },
       normalize: {
         files: {
           '<%= config.source %>/_scss/vendor/_normalize.scss': 'bower_components/normalize.css/normalize.css'
         }
-      },
+      }
     },
 
     buildcontrol: {
@@ -328,8 +324,6 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', [
       'sass',
       'jekyll:dev',
-      // 'modernizr',
-      'htmlmin',
       'browserSync',
     	'watch'
     ]);
@@ -337,7 +331,7 @@ module.exports = function(grunt) {
     grunt.registerTask('prod', [
       'sass',
       'jekyll:prod',
-      // 'modernizr',
+      'modernizr',
       'useminPrepare',
       'concat',
       'autoprefixer',
@@ -345,12 +339,18 @@ module.exports = function(grunt) {
       'cssmin',
       'uglify',
       'usemin',
-      // 'cacheBust',
+      'cacheBust',
       'htmlmin'
     ]);
 
     grunt.registerTask('upload', [
       'check',
+      'prod',
+      'buildcontrol'
+    ]);
+
+    grunt.registerTask('prepare', [
+      'copy',
       'prod',
       'buildcontrol'
     ]);
