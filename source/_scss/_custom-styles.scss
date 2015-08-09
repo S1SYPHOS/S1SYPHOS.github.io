@@ -13,7 +13,7 @@ $susy: (
   columns: 12,
   gutters: 0.25,
   // column-width: false,
-  global-box-sizing: border-box,
+  // global-box-sizing: content-box,
   last-flow: to,
   debug: (
     image: show-columns,
@@ -66,15 +66,7 @@ body {
   color: #000;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-image: linear-gradient(#9EBCF2, #FFFFFF);
-}
-
-.night {
-
-  body {
-  background-image: linear-gradient(#000000, #412863);
-  color: #fff;
-  }
+  background-image: linear-gradient(#C0E6F6, #FFFFFF);
 }
 
 a {
@@ -91,12 +83,4 @@ a {
 img {
   height: auto;
   max-width: 100%;
-}
-
-.toggle {
-  transition: 1s;
-
-  &:hover {
-    transform: scale(1.1);
-  }
 }
