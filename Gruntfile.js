@@ -170,32 +170,17 @@ module.exports = function(grunt) {
       }
     },
 
-    autoprefixer: {
-      options: {
-        browsers: ['last 2 versions', '> 5%', 'ie >= 8']
-      },
-      dist: {
-        expand: true,
-        src: '.tmp/concat/css/style.css'
-      }
-    },
-
     postcss: {
       options: {
         map: false,
         processors: [
           require('autoprefixer-core')({browsers: 'last 2 versions, > 5%, ie >= 8'})
-          // require('cssnano')()
         ]
       },
       dist: {
         src: '.tmp/concat/css/style.css'
       }
     },
-
-
-
-
 
     csscomb: {
       dist: {
