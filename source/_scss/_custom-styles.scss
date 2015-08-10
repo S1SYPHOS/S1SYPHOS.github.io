@@ -8,16 +8,16 @@ $susy: (
   // math: fluid,
   // output: float,
   // gutter-position: after,
-  container: 60em,
+  // container: 60em,
   // container-position: center,
-  columns: 2 1,
-  gutters: 0.05,
-  // column-width: false,
+  columns: 12,
+  gutters: 0.1,
+  // column-width: 60px,
   // global-box-sizing: content-box,
-  last-flow: 0to,
+  // last-flow: to,
   debug: (
     image: show-columns,
-    color: rgba(#66f, .25),
+    // color: rgba(#66f, .25),
     // output: background,
     // toggle: bottom left,
   ),
@@ -26,7 +26,7 @@ $susy: (
     // background-options: false,
     // box-sizing: true,
     clearfix: true,
-    rem: true,
+    // rem: true,
   )
 );
 
@@ -83,21 +83,31 @@ img {
 }
 
 .container {
-  @include container(60em);
+  @include container(960px);
   margin-top: 1rem;
+  position: relative;
 }
 
-.fixed-content,
+.fixed-content__wrap,
 .scroll-content {
-  border: 1px solid #666;
-  height: 200px;
+  padding: 1.5em;
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.75);
+  height: 100vh;
 }
 
 .scroll-content {
-  @include span(1);
+  @include span(8 last);
 }
 
 .fixed-content {
-  @include span(1 last);
-  height: 100%;
+  @include container;
+  position: fixed;
+  left: 0;
+  right: 0;
+
+}
+
+.fixed-content__wrap {
+  @include span(4);
+
 }
