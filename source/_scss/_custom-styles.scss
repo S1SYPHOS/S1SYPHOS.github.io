@@ -8,11 +8,11 @@ $susy: (
   // math: fluid,
   // output: float,
   // gutter-position: after,
-  // container: 60em,
+  container: 60em,
   // container-position: center,
   columns: 12,
-  gutters: 0.1,
-  // column-width: 60px,
+  gutters: 0,
+  // column-width: false,
   // global-box-sizing: content-box,
   // last-flow: to,
   debug: (
@@ -30,7 +30,7 @@ $susy: (
   )
 );
 
-// CLEARFIX MIXIN
+// CUSTOM CLEARFIX MIXIN
 @mixin clearfix {
   &:before,
   &:after {
@@ -45,25 +45,26 @@ $susy: (
 
 // DEFAULT STYLES
 html {
-  font-family: "PT Sans", sans-serif;
+  font-family: monospace;
   line-height: 1.5;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 *, *:before, *:after {
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 html,
 body {
-  min-height: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
   font-size: 100%;
 }
 
 body {
+  position: relative;
   color: #000;
+  text-size-adjust: 100%;
+  background: #fff;
 }
 
 a {
@@ -82,32 +83,107 @@ img {
   max-width: 100%;
 }
 
+// JUST SOME LAYOUT
 .container {
-  @include container(960px);
-  margin-top: 1rem;
-  position: relative;
-}
-
-.fixed-content__wrap,
-.scroll-content {
-  padding: 1.5em;
-  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.75);
-  height: 100vh;
-}
-
-.scroll-content {
-  @include span(8 last);
-}
-
-.fixed-content {
   @include container;
-  position: fixed;
-  left: 0;
-  right: 0;
-
+  height: 200vh;
 }
 
-.fixed-content__wrap {
-  @include span(4);
 
+
+
+.terminal {
+    width: 700px;
+    margin: 30px auto 0px;
 }
+
+.terminal__header {
+    height: 25px;
+    display: block;
+
+  background: linear-gradient(top,  #f7f7f7 0%,#cfcfcf 5%,#aaaaaa 100%);
+    border: 1px solid;
+    border-color: #9C9C9C #9C9C9C #111;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 25px;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+    color: #444;
+    position: relative;
+}
+
+.terminal__shell {
+    font-family: "Liberation Mono", monospace;
+    font-size: 17px;
+    line-height: 28px;
+    color: #EEEB82;
+    background-color: #3D3D3D;
+    overflow: hidden;
+    padding: 20px;
+    margin: 0px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    text-align: left;
+    display: block;
+
+    p {
+    margin: 0px;
+    font-weight: bold;
+    }
+}
+
+.terminal__header--controls {
+    position: absolute;
+    left: 8px;
+    top: 5px;
+
+    button {
+        width: 13px;
+        height: 13px;
+        border-radius: 100%;
+        text-indent: -9999px;
+    }
+
+    button + button {
+        margin-left: 0.6rem;
+    }
+}
+
+.btn--close {
+  background-color: #FA6058;
+  border: 1px solid #F35C54;
+}
+
+.btn--minimize {
+  background-color: #FABD2E;
+  border: 1px solid #E0AF50;
+}
+
+.btn--maximize {
+  background-color: #28CA40;
+  border: 1px solid #1DC334;
+}
+
+.path {
+    color: #71CFEE;
+    -moz-user-select: none;
+    padding-right: 0.6em;
+}
+
+.prompt {
+    color: #D74D52;
+    -moz-user-select: none;
+    padding-right: 0.6em;
+}
+
+
+.browserupgrade {
+  padding: 0.2em 0;
+  margin: 0.2em 0;
+  color: #000;
+  background: #ccc;
+}
+
+// INSERT YOUR MAGIC HERE :)

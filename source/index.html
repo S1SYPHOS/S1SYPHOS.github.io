@@ -3,11 +3,21 @@ layout: default
 title: S1SYPHOS
 ---
 <div class="container">
-	<div class="fixed-content">
-		<div class="fixed-content__wrap">
-			<h1>Heading 1</h1><h1>Heading 1</h1><h1>Heading 1</h1><h1>Heading 1</h1><h1>Heading 1</h1>
-		</div>	</div>
-	<div class="scroll-content">
-		<h1>Heading 1</h1><h1>Heading 1</h1><h1>Heading 1</h1><h1>Heading 1</h1><h1>Heading 1</h1>
-	</div>
+	<header class="header">
+
+	</header>
+	<div class="terminal">
+    <div class="terminal__header">
+			<div class="terminal__header--controls">
+				<button class="btn--close">close</button>
+    		<button class="btn--minimize">minimize</button>
+    		<button class="btn--maximize">maximize</button>
+    </div>
+		</div>
+    <div class="terminal__shell">
+      <p><span class="path">~</span><span class="prompt">$</span>git add --all</p>
+      <p><span class="path">~</span><span class="prompt">$</span>git commit -m "Initial commit"</p>
+      <p><span class="path">~</span><span class="prompt">$</span>git push -u origin master</p>
+    </div>
+  </div>
 </div>
