@@ -103,13 +103,7 @@ img {
     background: linear-gradient(to bottom, #f7f7f7 0%,#cfcfcf 5%, #aaaaaa 100%);
     border: 1px solid;
     border-color: #9C9C9C #9C9C9C #111;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-    text-align: center;
-    font-size: 13px;
-    line-height: 25px;
-    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
-    color: #444;
+    border-radius: 7px 7px 0 0;
     position: relative;
 }
 
@@ -135,7 +129,7 @@ img {
 
 .terminal__header--controls {
     position: absolute;
-    left: 8px;
+    left: 10px;
     top: 5px;
 
     button {
@@ -143,10 +137,6 @@ img {
         height: 13px;
         border-radius: 100%;
         text-indent: -9999px;
-    }
-
-    button + button {
-        margin-left: 0.6rem;
     }
 }
 
