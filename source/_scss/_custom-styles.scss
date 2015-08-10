@@ -8,10 +8,10 @@ $susy: (
   // math: fluid,
   // output: float,
   // gutter-position: after,
-  container: 90%,
+  container: 75em,
   // container-position: center,
   columns: 12,
-  gutters: 0.25,
+  gutters: 0.1,
   // column-width: false,
   // global-box-sizing: content-box,
   last-flow: to,
@@ -26,7 +26,7 @@ $susy: (
     // background-options: false,
     // box-sizing: true,
     clearfix: true,
-    // rem: true,
+    rem: true,
   )
 );
 
@@ -83,4 +83,23 @@ a {
 img {
   height: auto;
   max-width: 100%;
+}
+
+.container {
+  @include container;
+}
+
+.fixed-content,
+.scroll-content {
+  border: 1px solid #666;
+  height: 200px;
+  margin-top: 1rem;
+}
+
+.scroll-content {
+  @include span(8 of 12);
+}
+.fixed-content {
+  @include span(4 last);
+  height: 100%;
 }
