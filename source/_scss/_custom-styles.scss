@@ -100,8 +100,7 @@ img {
 .terminal__header {
     height: 25px;
     display: block;
-
-  background: linear-gradient(top,  #f7f7f7 0%,#cfcfcf 5%,#aaaaaa 100%);
+    background: linear-gradient(to bottom, #f7f7f7 0%,#cfcfcf 5%, #aaaaaa 100%);
     border: 1px solid;
     border-color: #9C9C9C #9C9C9C #111;
     border-top-left-radius: 7px;

@@ -71,7 +71,7 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: '<%= config.source %>/_scss/**/*.scss',
-        tasks: ['sass', 'autoprefixer', 'penthouse']
+        tasks: ['sass', 'postcss', 'penthouse']
       },
       jekyll: {
         files: ['Gruntfile.js', '<%= config.source %>/**/*.{html,md,css,js}'],
@@ -179,6 +179,23 @@ module.exports = function(grunt) {
         src: '.tmp/concat/css/style.css'
       }
     },
+
+    postcss: {
+      options: {
+        map: false,
+        processors: [
+          require('autoprefixer-core')({browsers: 'last 2 versions, > 5%, ie >= 8'})
+          // require('cssnano')()
+        ]
+      },
+      dist: {
+        src: '.tmp/concat/css/style.css'
+      }
+    },
+
+
+
+
 
     csscomb: {
       dist: {
@@ -334,7 +351,7 @@ module.exports = function(grunt) {
       'modernizr',
       'useminPrepare',
       'concat',
-      'autoprefixer',
+      'postcss',
       'csscomb',
       'cssmin',
       'uglify',
