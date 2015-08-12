@@ -135,36 +135,6 @@ $content-height: 100vh -  2 * $header-footer-height;
     }
 }
 
-.terminal__shell {
-    font-family: "Liberation Mono", monospace;
-    height: 25vh;
-    font-size: 17px;
-    color: #EEEB82;
-    background-color: #3D3D3D;
-    overflow: hidden;
-    padding: 1.1rem;
-    border-radius: 0 0 7px 7px;
-
-    p {
-    margin: 0;
-    font-weight: bold;
-    }
-
-    &--path {
-        color: #71CFEE;
-        user-select: none;
-        padding-right: 0.6em;
-    }
-
-    &--prompt {
-        color: #D74D52;
-        user-select: none;
-        padding-right: 0.6em;
-    }
-}
-
-
-
 .btn--close {
   background-color: #FA6058;
   border: 1px solid #F35C54;
@@ -180,31 +150,31 @@ $content-height: 100vh -  2 * $header-footer-height;
   border: 1px solid #1DC334;
 }
 
+.terminal__shell {
+    font-family: "Liberation Mono", monospace;
+    height: 25vh;
+    font-size: 17px;
+    color: #FFEE58;
+    background-color: #3D3D3D;
+    overflow: hidden;
+    padding: 1.1rem;
+    border-radius: 0 0 7px 7px;
 
-.browserupgrade {
-  padding: 0.2em 0;
-  margin: 0.2em 0;
-  color: #000;
-  background: #ccc;
-}
+    p {
+    margin: 0;
+    font-weight: bold;
+    }
 
-// INSERT YOUR MAGIC HERE :)
 
-.css_blink {
-  animation-name: blinker;
-  animation-duration: 1.1s;
-  animation-timing-function: ease-out;
-  animation-iteration-count: infinite;
-}
+    &--path {
+        color: #29B6F6;
+        user-select: none;
+        padding-right: 0.6em;
+    }
 
-@keyframes blinker {
-  0% {
-    opacity: 1.0;
-  }
-  50% {
-    opacity: 0.0;
-  }
-  100% {
-    opacity: 1.0;
-  }
+    &--prompt {
+        color: #EF5350;
+        user-select: none;
+        padding-right: 0.6em;
+    }
 }
