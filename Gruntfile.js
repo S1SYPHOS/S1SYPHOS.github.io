@@ -27,18 +27,17 @@ module.exports = function(grunt) {
     jekyll: {
       options: {
         bundleExec: true,
+        src: '<%= config.source %>',
         config: '_config.yml,_config_prod.yml'
       },
       dev: {
         options: {
           config: '_config.yml',
-          src: '<%= config.source %>',
-          dest: '<%= config.dest %>'
+          dest: '.jekyll'
         }
       },
       prod: {
         options: {
-          src: '<%= config.source %>',
           dest: '<%= config.dest %>'
         }
       },
@@ -54,7 +53,7 @@ module.exports = function(grunt) {
         bsFiles: {
           src : [
             '<%= config.dest %>/*.html',
-            '<%= config.dest %>/css/*.css',
+            '.tmp/css/**/*.css',
             '<%= config.dest %>/js/*.js',
             '<%= config.source %>/img/**/*.{jpg,png,svg,gif}'
           ]
@@ -62,7 +61,7 @@ module.exports = function(grunt) {
         options: {
           watchTask: true,
           server: {
-            baseDir: '<%= config.dest %>'
+            baseDir: ['<%= config.dest %>', '.tmp', '<%= config.source %>']
           }
         }
       }
@@ -73,13 +72,30 @@ module.exports = function(grunt) {
         files: '<%= config.source %>/_scss/**/*.scss',
         tasks: ['sass', 'postcss:dev', 'penthouse']
       },
+
+      autoprefixer: {
+        files: ['<%= config.source %>/css/style.css'],
+        tasks: ['copy:stageCSS', 'postcss:dev']
+      },
+
       jekyll: {
-        files: ['Gruntfile.js', '<%= config.source %>/**/*.{html,md,css,js}'],
+        files: ['Gruntfile.js', '<%= config.source %>/**/*.{html,md}'],
         tasks: ['jekyll:dev']
       }
     },
 
     copy: {
+
+      stageCSS: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= config.source %>/css',
+          src: '**/*.css',
+          dest: '.tmp/css'
+        }]
+      },
+
       OptimizedWebfontLoading: {
         files: {
           '<%= config.source %>/_includes/fontloader.js': 'bower_components/OptimizedWebfontLoading/build/fontloader.js'
@@ -183,12 +199,12 @@ module.exports = function(grunt) {
           require('autoprefixer-core')({browsers: 'last 2 versions, > 2%, ie >= 8, Firefox ESR, Opera 12.1'})
         ]
       },
-      dist: {
+      prod: {
         src: '.tmp/concat/css/style.css'
       },
       dev: {
         src: '.tmp/css/style.css',
-        dest: '.tmp'
+        dest: '.tmp/style.css'
       }
     },
 
@@ -211,7 +227,7 @@ module.exports = function(grunt) {
     penthouse: {
       dist: {
         outfile : '<%= config.source %>/_includes/critical.css',
-        css : '<%= config.source %>/css/style.css',
+        css : '.tmp/css/style.css',
         url : 'http://localhost:3000',
         width : 1280,
         height : 800
