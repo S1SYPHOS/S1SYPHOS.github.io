@@ -71,7 +71,7 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: '<%= config.source %>/_scss/**/*.scss',
-        tasks: ['sass', 'postcss', 'penthouse']
+        tasks: ['sass', 'postcss:dev', 'penthouse']
       },
       jekyll: {
         files: ['Gruntfile.js', '<%= config.source %>/**/*.{html,md,css,js}'],
@@ -88,6 +88,11 @@ module.exports = function(grunt) {
       loadCSS: {
         files: {
           '<%= config.source %>/_includes/loadCSS.js': 'bower_components/loadcss/loadCSS.js'
+        }
+      },
+      jQueryTeletype: {
+        files: {
+          '<%= config.source %>/js/vendor/jquery-teletype.js': 'bower_components/jquery-teletype-plugin/jquery.teletype.js'
         }
       },
       normalize: {
@@ -175,11 +180,14 @@ module.exports = function(grunt) {
         map: false,
         processors: [
           require('pixrem')(),
-          require('autoprefixer-core')({browsers: 'last 2 versions, > 5%, ie >= 8'})
+          require('autoprefixer-core')({browsers: 'last 2 versions, > 2%, ie >= 8, Firefox ESR, Opera 12.1'})
         ]
       },
       dist: {
         src: '.tmp/concat/css/style.css'
+      },
+      dev: {
+        src: '<%= config.source %>/css/style.css'
       }
     },
 
@@ -337,7 +345,7 @@ module.exports = function(grunt) {
       'modernizr',
       'useminPrepare',
       'concat',
-      'postcss',
+      'postcss:prod',
       'csscomb',
       'cssmin',
       'uglify',

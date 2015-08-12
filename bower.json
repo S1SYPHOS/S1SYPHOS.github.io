@@ -7,12 +7,13 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "susy": "~2.2.5",
+    "susy": "~2.2.5"
   },
   "devDependencies": {
     "loadcss": "~0.1.7",
     "OptimizedWebfontLoading": "git://github.com/bdadam/OptimizedWebfontLoading.git",
     "normalize.css": "latest",
-    "breakpoint-sass": "~2.6.1"
+    "breakpoint-sass": "~2.6.1",
+    "jquery-teletype-plugin": "https://github.com/stvwhtly/jquery-teletype-plugin.git#~0.1.5"
   }
 }
