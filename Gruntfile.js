@@ -170,7 +170,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          '<%= config.source %>/css/style.css': '<%= config.source %>/_scss/style.scss'
+          '.tmp/css/style.css': '<%= config.source %>/_scss/style.scss'
         }
       }
     },
@@ -187,7 +187,8 @@ module.exports = function(grunt) {
         src: '.tmp/concat/css/style.css'
       },
       dev: {
-        src: '<%= config.source %>/css/style.css'
+        src: '.tmp/css/style.css',
+        dest: '.tmp'
       }
     },
 

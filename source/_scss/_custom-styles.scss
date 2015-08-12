@@ -98,9 +98,7 @@ $content-height: 100vh -  2 * $header-footer-height;
   background-attachment: fixed;
   background-size: cover;
   padding-top: 10rem;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
-  box-shadow: 0 0 20px 10px #374760;
+  box-shadow: 0 0 15px 15px #374760;
 }
 
 .site-footer {
@@ -150,13 +148,11 @@ $content-height: 100vh -  2 * $header-footer-height;
   }
 }
 
-
-
 .terminal__shell {
-  font-family: "Liberation Mono", monospace;
+  font-family: "Ubuntu Mono", monospace;
   height: 25vh;
   font-size: 17px;
-  color: #FFEE58;
+  color: #FFFFFF;
   background-color: #3D3D3D;
   overflow: hidden;
   padding: 1.1rem;
@@ -164,13 +160,13 @@ $content-height: 100vh -  2 * $header-footer-height;
 
   p {
     margin: 0;
-    font-weight: bold;
   }
 
   &--path {
     color: #29B6F6;
     user-select: none;
     padding-right: 0.6em;
+    font-weight: bold;
   }
 
   &--prompt {
