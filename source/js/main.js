@@ -1,8 +1,6 @@
-jQuery(document).ready(function() {
-  // Set initial state of checkbox
-  $('.toggle-input').attr('checked', false);
-  // Toggle day / night state on click
-  $('.toggle-input').change(function() {
-    $('html').toggleClass('night');
-  });
-});
+function blinker() {
+  $('.jquery_blink').fadeOut(500);
+  $('.jquery_blink').fadeIn(500);
+}
+
+setInterval(blinker, 1100);

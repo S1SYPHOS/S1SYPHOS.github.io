@@ -174,6 +174,7 @@ module.exports = function(grunt) {
       options: {
         map: false,
         processors: [
+          require('pixrem')(),
           require('autoprefixer-core')({browsers: 'last 2 versions, > 5%, ie >= 8'})
         ]
       },
