@@ -16,7 +16,7 @@ $susy: (
   // global-box-sizing: content-box,
   // last-flow: to,
   debug: (
-    image: show-columns,
+    // image: show-columns,
     // color: rgba(#66f, .25),
     // output: background,
     // toggle: bottom left,
@@ -64,7 +64,7 @@ body {
   position: relative;
   color: #000;
   text-size-adjust: 100%;
-  background: #fff;
+  background: #455a64;
 }
 
 a {
@@ -78,23 +78,37 @@ a {
   }
 }
 
-img {
-  height: auto;
-  max-width: 100%;
-}
-
 // JUST SOME LAYOUT
+$header-footer-height: 10vh;
+$content-height: 100vh -  2 * $header-footer-height;
+
 .container {
   @include container;
-  height: 200vh;
 }
 
+.site-header {
+  height: $header-footer-height;
+}
 
+.content {
+  height: $content-height;
+  background-image: url("/img/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 10rem;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  box-shadow: 0 0 20px 10px #374760;
+}
 
+.site-footer {
+  height: $header-footer-height;
+}
 
 .terminal {
-    width: 700px;
-    margin: 30px auto 0px;
+  @include container;
 }
 
 .terminal__header {
@@ -105,40 +119,51 @@ img {
     border-color: #9C9C9C #9C9C9C #111;
     border-radius: 7px 7px 0 0;
     position: relative;
+
+    &--controls {
+        position: absolute;
+        left: 10px;
+        top: 5px;
+        user-select: none;
+
+        button {
+            width: 13px;
+            height: 13px;
+            border-radius: 100%;
+            text-indent: -9999px;
+        }
+    }
 }
 
 .terminal__shell {
     font-family: "Liberation Mono", monospace;
+    height: 25vh;
     font-size: 17px;
-    line-height: 28px;
     color: #EEEB82;
     background-color: #3D3D3D;
     overflow: hidden;
-    padding: 20px;
-    margin: 0px;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    text-align: left;
-    display: block;
+    padding: 1.1rem;
+    border-radius: 0 0 7px 7px;
 
     p {
-    margin: 0px;
+    margin: 0;
     font-weight: bold;
     }
-}
 
-.terminal__header--controls {
-    position: absolute;
-    left: 10px;
-    top: 5px;
+    &--path {
+        color: #71CFEE;
+        user-select: none;
+        padding-right: 0.6em;
+    }
 
-    button {
-        width: 13px;
-        height: 13px;
-        border-radius: 100%;
-        text-indent: -9999px;
+    &--prompt {
+        color: #D74D52;
+        user-select: none;
+        padding-right: 0.6em;
     }
 }
+
+
 
 .btn--close {
   background-color: #FA6058;
@@ -155,18 +180,6 @@ img {
   border: 1px solid #1DC334;
 }
 
-.path {
-    color: #71CFEE;
-    -moz-user-select: none;
-    padding-right: 0.6em;
-}
-
-.prompt {
-    color: #D74D52;
-    -moz-user-select: none;
-    padding-right: 0.6em;
-}
-
 
 .browserupgrade {
   padding: 0.2em 0;
@@ -176,3 +189,22 @@ img {
 }
 
 // INSERT YOUR MAGIC HERE :)
+
+.css_blink {
+  animation-name: blinker;
+  animation-duration: 1.1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blinker {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
