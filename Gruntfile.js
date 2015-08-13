@@ -33,7 +33,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           config: '_config.yml',
-          dest: '.jekyll'
+          dest: '<%= config.dest %>'
         }
       },
       prod: {
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
         bsFiles: {
           src : [
             '<%= config.dest %>/*.html',
-            '.tmp/css/**/*.css',
+            '<%= config.dest %>/css/*.css',
             '<%= config.dest %>/js/*.js',
             '<%= config.source %>/img/**/*.{jpg,png,svg,gif}'
           ]
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
         options: {
           watchTask: true,
           server: {
-            baseDir: ['<%= config.dest %>', '.tmp', '<%= config.source %>']
+            baseDir: '<%= config.dest %>'
           }
         }
       }
@@ -73,11 +73,6 @@ module.exports = function(grunt) {
         tasks: ['sass', 'postcss:dev', 'penthouse']
       },
 
-      autoprefixer: {
-        files: ['<%= config.source %>/css/style.css'],
-        tasks: ['copy:stageCSS', 'postcss:dev']
-      },
-
       jekyll: {
         files: ['Gruntfile.js', '<%= config.source %>/**/*.{html,md}'],
         tasks: ['jekyll:dev']
@@ -85,17 +80,6 @@ module.exports = function(grunt) {
     },
 
     copy: {
-
-      stageCSS: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= config.source %>/css',
-          src: '**/*.css',
-          dest: '.tmp/css'
-        }]
-      },
-
       OptimizedWebfontLoading: {
         files: {
           '<%= config.source %>/_includes/fontloader.js': 'bower_components/OptimizedWebfontLoading/build/fontloader.js'
@@ -204,7 +188,7 @@ module.exports = function(grunt) {
       },
       dev: {
         src: '.tmp/css/style.css',
-        dest: '.tmp/style.css'
+        dest: '<%= config.dest %>/css/style.css'
       }
     },
 
@@ -227,7 +211,7 @@ module.exports = function(grunt) {
     penthouse: {
       dist: {
         outfile : '<%= config.source %>/_includes/critical.css',
-        css : '.tmp/css/style.css',
+        css : '<%= config.dest %>/css/style.css',
         url : 'http://localhost:3000',
         width : 1280,
         height : 800
