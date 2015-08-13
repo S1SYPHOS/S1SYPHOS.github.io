@@ -4,11 +4,11 @@ module.exports = function(grunt) {
 
   // CUSTOM JQUERY BUILT - http://developer.telerik.com/featured/trimming-jquery-grunt/
   // !! LIST NEEDS TO BE EXPANDED !!
-  var version = "2.1.4",
-  exclude = [ "core/ready", "effects", "deprecated", "ajax/script", "ajax/jsonp", "event/alias", "wrap" ],
-  dest = "jquery-" + version + ".custom.js"
+  var version = '2.1.4',
+  exclude = [ 'core/ready', 'effects', 'deprecated', 'ajax/script', 'ajax/jsonp', 'event/alias', 'wrap' ],
+  dest = 'jquery-' + version + '.custom.js'
   exclude.forEach(function( module, index ) {
-    exclude[ index ] = "-" + module;
+    exclude[ index ] = '-' + module;
   });
 
 
@@ -224,16 +224,19 @@ module.exports = function(grunt) {
     shell: {
       jQuery: {
         command: [
-          "cd source/js/_vendor",
-          "git clone https://github.com/jquery/jquery.git",
-          "cd jquery",
-          "git checkout " + version,
-          "npm install",
-          "grunt custom:" + exclude.join( "," ),
-          "cd ../",
-          "cp jquery/dist/jquery.js " + dest,
-          "rm -rf jquery"
-        ].join( "&&" )
+          'cd source/js/_vendor',
+          'git clone https://github.com/jquery/jquery.git',
+          'cd jquery',
+          'git checkout ' + version,
+          'npm install',
+          'grunt custom:' + exclude.join( ',' ),
+          'cd ../',
+          'cp jquery/dist/jquery.js ' + dest,
+          'rm -rf jquery'
+        ].join( '&&' )
+      },
+      bowerUpdate: {
+        command: 'bower update'
       }
     },
 
@@ -327,7 +330,6 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.registerTask('check', [
-      'devUpdate',
       'jekyll:check',
       'scsslint',
       'jshint'
@@ -361,10 +363,11 @@ module.exports = function(grunt) {
       'buildcontrol'
     ]);
 
-    grunt.registerTask('prepare', [
+    grunt.registerTask('update', [
+      'devUpdate',
+      'shell:bowerUpdate',
       'copy',
-      'prod',
-      'buildcontrol'
+      'shell:jQuery'
     ]);
 
   };
