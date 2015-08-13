@@ -49,7 +49,9 @@ html {
   line-height: 1.5;
   box-sizing: border-box; }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit; }
 
 html,
@@ -62,13 +64,13 @@ body {
 
 body {
   position: relative;
-  color: #000;
+  color: #000000;
   text-size-adjust: 100%;
-  background: #455a64;
+  background: #455A64;
 }
 
 a {
-  color: #268bd2;
+  color: #268BD2;
   text-decoration: none;
 
   &:hover,
@@ -92,12 +94,12 @@ $content-height: 100vh -  2 * $header-footer-height;
 
 .content {
   height: $content-height;
-  background-image: url("/img/bg.jpg");
+  padding-top: 10rem;
+  background-attachment: fixed;
+  background-image: url('/img/bg.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
-  padding-top: 10rem;
   box-shadow: 0 0 15px 15px #374760;
 }
 
@@ -125,37 +127,37 @@ $content-height: 100vh -  2 * $header-footer-height;
 }
 
 .terminal__header {
-  height: 25px;
-  display: block;
-  background: linear-gradient(to bottom, #f7f7f7 0%,#cfcfcf 5%, #aaaaaa 100%);
-  border: 1px solid;
-  border-color: #9C9C9C #9C9C9C #111;
-  border-radius: 7px 7px 0 0;
   position: relative;
+  display: block;
+  height: 25px;
+  background: linear-gradient(to bottom, #F7F7F7 0%, #CFCFCF 5%, #AAAAAA 100%);
+  border: 1px solid;
+  border-color: #9C9C9C #9C9C9C #111111;
+  border-radius: 7px 7px 0 0;
 
   &--controls {
     position: absolute;
-    left: 10px;
     top: 5px;
+    left: 10px;
     user-select: none;
 
     button {
       width: 13px;
       height: 13px;
-      border-radius: 100%;
       text-indent: -9999px;
+      border-radius: 100%;
     }
   }
 }
 
 .terminal__shell {
-  font-family: "Liberation Mono", monospace;
   height: 25vh;
+  padding: 1.1rem;
+  overflow: hidden;
+  font-family: "Liberation Mono", monospace;
   font-size: 17px;
   color: #FFFFFF;
   background-color: #3D3D3D;
-  overflow: hidden;
-  padding: 1.1rem;
   border-radius: 0 0 7px 7px;
 
   p {
@@ -163,15 +165,15 @@ $content-height: 100vh -  2 * $header-footer-height;
   }
 
   &--path {
-    color: #29B6F6;
-    user-select: none;
     padding-right: 0.6em;
     font-weight: bold;
+    color: #29B6F6;
+    user-select: none;
   }
 
   &--prompt {
+    padding-right: 0.6em;
     color: #EF5350;
     user-select: none;
-    padding-right: 0.6em;
   }
 }
