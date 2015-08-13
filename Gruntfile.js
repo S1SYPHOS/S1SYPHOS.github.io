@@ -6,7 +6,7 @@ module.exports = function(grunt) {
   // !! LIST NEEDS TO BE EXPANDED !!
   var version = '2.1.4',
   exclude = [ 'core/ready', 'effects', 'deprecated', 'ajax/script', 'ajax/jsonp', 'event/alias', 'wrap' ],
-  dest = 'jquery-' + version + '.custom.js'
+  dest = 'jquery-' + version + '.custom.js';
   exclude.forEach(function( module, index ) {
     exclude[ index ] = '-' + module;
   });
@@ -338,6 +338,7 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', [
       'sass',
       'jekyll:dev',
+      'postcss:dev',
       'browserSync',
     	'watch'
     ]);
