@@ -92,7 +92,7 @@ module.exports = function(grunt) {
       },
       jQueryTeletype: {
         files: {
-          '<%= config.source %>/js/vendor/jquery-teletype.js': 'bower_components/jquery-teletype-plugin/jquery.teletype.js'
+          '<%= config.source %>/js/_vendor/jquery-teletype.js': 'bower_components/jquery-teletype-plugin/jquery.teletype.js'
         }
       },
       normalize: {
@@ -224,7 +224,7 @@ module.exports = function(grunt) {
     shell: {
       jQuery: {
         command: [
-          "cd source/js/vendor",
+          "cd source/js/_vendor",
           "git clone https://github.com/jquery/jquery.git",
           "cd jquery",
           "git checkout " + version,
