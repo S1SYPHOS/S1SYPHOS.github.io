@@ -2,10 +2,8 @@
 **This is a work in progress**
 
 NOTES:
-checking out grunt-postcss
-npm install grunt-postcss autoprefixer-core
-
 also interesting: font-magician
+AND
 waiting for cssnano to get better
 
 ## Special Thanks
