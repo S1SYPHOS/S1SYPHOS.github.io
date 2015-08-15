@@ -183,12 +183,12 @@ module.exports = function(grunt) {
           require('autoprefixer-core')({browsers: 'last 2 versions, > 2%, ie >= 8, Firefox ESR, Opera 12.1'})
         ]
       },
-      prod: {
-        src: '.tmp/concat/css/style.css'
-      },
       dev: {
         src: '.tmp/css/style.css',
         dest: '<%= config.dest %>/css/style.css'
+      },
+      prod: {
+        src: '.tmp/concat/css/style.css'
       }
     },
 
