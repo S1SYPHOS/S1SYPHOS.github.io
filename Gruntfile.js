@@ -180,7 +180,8 @@ module.exports = function(grunt) {
         map: false,
         processors: [
           require('pixrem')(),
-          require('autoprefixer-core')({browsers: 'last 2 versions, > 2%, ie >= 8, Firefox ESR, Opera 12.1'})
+          require('autoprefixer-core')({browsers: 'last 2 versions, > 2%, ie >= 8, Firefox ESR, Opera 12.1'}),
+          require('css-mqpacker')()
         ]
       },
       dev: {
