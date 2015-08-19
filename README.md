@@ -10,5 +10,7 @@ waiting for cssnano to get better
 check out teletype > prefix?
 man daktylos
 
+! more modular scss approach
+
 ## Special Thanks
 I'd like to thank everybody that's making great software - you people are awesome.
