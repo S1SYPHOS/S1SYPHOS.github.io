@@ -1,6 +1,11 @@
 @charset 'UTF-8';
 
-// NORMALIZE
+// GROUNDWORK
+@import 'variables';
+@import 'mixins';
+@import 'susy_map';
+
+// FIRST LAYER
 @import 'vendor/normalize';
 
 // CUSTOM STYLES
