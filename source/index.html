@@ -2,6 +2,24 @@
 layout: default
 title: S1SYPHOS
 ---
+<script type="text/javascript">
+	$(document).ready(function() {
+		$( '.type-text' ).each( function() {
+			var items = $( this ).attr( 'title' ) + ';' + $( this ).text();
+			var thing = $( this ).empty().attr( 'title', '' ).teletype( {
+				text: items.split( ';' ),
+				typeDelay: 10,
+				backDelay: 20,
+				cursor: '▋',
+				delay: 3000,
+				preserve: true,
+				prefix: '<span class="terminal__shell--path">[daktylos.net ~]</span><span class="terminal__shell--prompt">$</span>',
+				loop: 1
+			} );
+		} );
+	} );
+</script>
+
 <header class="site-header" role="banner">
 	<div class="container">
 		<h1 style="display:none">insert svg-logo stuff</h1>
@@ -19,10 +37,8 @@ title: S1SYPHOS
 		</div>
     <div class="terminal__shell">
 			<p><span class="terminal__shell--path">[daktylos.net ~]</span><span class="terminal__shell--prompt">$</span>work in progress</p>
-			<p><span class="terminal__shell--path">[daktylos.net ~]</span><span class="terminal__shell--prompt">$</span>work in progress</p>
-			<p><span class="terminal__shell--path">[daktylos.net ~]</span><span class="terminal__shell--prompt">$</span>work in progress</p>
-			<p><span class="terminal__shell--path">[daktylos.net ~]</span><span class="terminal__shell--prompt">$</span>work in progress</p>
-    </div>
+			<p class="type-text" title="this is a work in progress.\n"></p>
+  	</div>
   </div>
 </main>
 
