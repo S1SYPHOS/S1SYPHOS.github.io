@@ -1,19 +1,20 @@
 @charset 'UTF-8';
 
-
-// IMPORTS
+// LOADING - PLEASE WAIT
 @import '../../bower_components/susy/sass/susy';
 @import '../../bower_components/breakpoint-sass/stylesheets/breakpoint';
 
-// GROUNDWORK
+// GET READY
 @import 'mixins';
 @import 'susy_map';
 @import 'variables';
 
-// FIRST LAYER
+// BASE
 // @import 'vendor/normalize';
 @import 'base/defaults';
-@import 'base/terminal';
 
-// SECOND LAYER
+// LAYOUTS
 @import 'layout/header-content-footer';
+
+// MODULES
+@import 'base/terminal';
