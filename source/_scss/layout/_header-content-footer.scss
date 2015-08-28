@@ -10,7 +10,7 @@
 
 .content {
   height: $content-height;
-  padding-top: 10rem;
+  padding-top: $header-footer-height / 2;
   background-attachment: fixed;
   background-image: url('/img/bg.jpg');
   background-position: center;
