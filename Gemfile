@@ -1,3 +1,4 @@
+# List of Gems used for S1SYPHOS.github.io
 source "https://rubygems.org"
 
 gem "jekyll", "~> 2.5.3"
