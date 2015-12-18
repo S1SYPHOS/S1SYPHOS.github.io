@@ -4,10 +4,31 @@
   {% include head.html %}
 
   <body>
-    {{ content }}
 
-    <!-- build:js(source) js/scripts.js -->
-    <script src="js/plugins.js"></script>
-    <!-- endbuild -->
+    <header id="site-header" role="banner">
+      <nav class="primary-nav">
+        {% include nav.html %}
+      </nav>
+    </header>
+
+    {% include sidebar.html %}
+
+    <main id="content" role="content">
+      {{ content }}
+    </main>
+
+    <footer id="site-footer" role="contentinfo">
+    	<div class="container">
+    		<h2>insert contact stuff</h2>
+    	</div>
+    </footer>
+
+    {% include pagination.html %}
+
+    <!-- inject:js -->
+    <script src="/assets/scripts/jquery.js"></script>
+    <script src="/assets/scripts/main.js"></script>
+    <!-- endinject -->
+
   </body>
 </html>

@@ -1,4 +1,7 @@
-// CUSTOM CLEARFIX MIXIN
+//
+// Mixins
+//
+
 @mixin clearfix {
   &:before,
   &:after {

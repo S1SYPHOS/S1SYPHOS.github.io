@@ -1,39 +1,22 @@
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>{{ page.title }} - {{ site.title }}</title>
   <meta name="description" content="{{ site.descripton }}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{{ page.title }} - {{ site.title }}</title>
 
   <!-- +++ WEBFONTS +++ -->
   <script>
     {% include fontloader.js %}
-    loadFont("webfonts", "/css/webfonts.woff.css", "/css/webfonts.woff2.css");
+    loadFont("webfonts", "/assets/fonts/webfonts.woff.css", "assets/fonts/webfonts.woff2.css");
   </script>
   <noscript>
     <link href='http://fonts.googleapis.com/css?family=Liberation+Mono:400,700' rel='stylesheet' type='text/css'>
   </noscript>
 
   <!-- +++ CSS +++ -->
-  {% if site.environment == 'production' %}
-  <style>{% include critical.css %}</style>
-  <script>
-    {% include loadCSS.js %}
-    loadCSS("css/style.css");
-  </script>
-  <noscript>
-  {% endif %}
-   <!-- build:css(.tmp) css/style.css -->
-  <link href="css/style.css" rel="stylesheet" type="text/css">
-   <!-- endbuild -->
-  {% if site.environment == 'production' %}
-  </noscript>
-  {% endif %}
-
-  <!-- +++ JAVASCRIPT +++ -->
-  <!-- build:js(source) js/daktylos.js -->
-  <script src="js/vendor/jquery.js"></script>
-  <script src="js/vendor/jquery-teletype.js"></script>
-  <script src="js/main.js"></script>
-  <!-- endbuild -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/assets/styles/main.css">
+  <!-- endinject -->
 </head>

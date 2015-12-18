@@ -1,5 +1,0 @@
-# BUILD-TIME JEKYLL CONFIGURATION
-
-url:                http://daktylos.net
-environment:        production
-exclude:            'js'
