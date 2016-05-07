@@ -1,3 +1,4 @@
+.publish
 .tmp
 .sass-cache
 node_modules
@@ -5,3 +6,4 @@ bower_components
 Gemfile.lock
 source/.jekyll-metadata
 build
+/.bundle/config
