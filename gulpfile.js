@@ -402,3 +402,10 @@ gulp.task('default', gulp.series(
 // 'gulp rebuild' -- WARNING: Erases your assets and built site, use only when
 // you need to do a complete rebuild
 gulp.task('rebuild', gulp.series('clean:dist', 'clean:assets', 'clean:metadata'));
+
+// # Deploy
+// 'gulp deploy' publishes your content to GitHub Pages
+gulp.task('deploy', function() {
+  return gulp.src('./build/**/*')
+    .pipe($$.ghPages({branch: 'master'}));
+});

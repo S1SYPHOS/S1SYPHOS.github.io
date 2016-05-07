@@ -5,30 +5,36 @@
 
   <body>
 
-    <header id="site-header" role="banner">
-      <nav class="primary-nav">
+    <header role="banner">
+      <nav class="primary-nav" role="navigation">
         {% include nav.html %}
       </nav>
     </header>
 
-    {% include sidebar.html %}
+    <main role="main">
+      <article id="content" >
+        {{ content }}
+      </article>
 
-    <main id="content" role="content">
-      {{ content }}
+      {% include sidebar.html %}
+
     </main>
 
-    <footer id="site-footer" role="contentinfo">
+
+    <footer role="contentinfo">
     	<div class="container">
     		<h2>insert contact stuff</h2>
     	</div>
     </footer>
 
-    {% include pagination.html %}
-
     <!-- inject:js -->
     <script src="/assets/scripts/jquery.js"></script>
     <script src="/assets/scripts/main.js"></script>
     <!-- endinject -->
+
+    <!-- <script type="text/javascript">
+      $(document).foundation();
+    </script> -->
 
   </body>
 </html>
