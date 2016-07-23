@@ -1,0 +1,18 @@
+<header id="site-header" class="site-header is-maximized" role="banner">
+  <a href="{{ site.baseurl }}/" title="Home">
+    {% include two-brain-with-brand.svg %}
+    {% include two-brain-only.svg %}
+  </a>
+
+  <div class="js-nav-overlay">
+    <nav id="js-nav" data-gumshoe class="nav nav--primary">
+      <a class="anchor-link" data-scroll href="{{ site.baseurl }}/#leistungen">Leistungen</a>
+      <a class="anchor-link" data-scroll href="{{ site.baseurl }}/#portfolio">Portfolio</a>
+      <a class="anchor-link" data-scroll href="{{ site.baseurl }}/#kontakt">Kontakt</a>
+      <a class="btn btn--mono" data-scroll href="/blog/">Blog</a>
+    </nav>
+  </div>
+  <button id="js-nav-toggle" class="nav-toggle">
+    <span class="nav-toggle_icon">Menu</span>
+  </button>
+</header>

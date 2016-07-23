@@ -2,75 +2,36 @@
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
-@import "../../../bower_components/foundation-sites/scss/foundation.scss";
-@import "../../../bower_components/susy/sass/_susy.scss";
+@import '../../../bower_components/susy/sass/_susy.scss';
 // endbower
 
-
-// For information about Foundation6 and Sass, see: http://foundation.zurb.com/sites/docs/sass.html
-// Local copy of Foundation6 settings file
-// @import 'foundation-settings';
-
-// Use this to include all Foundation6 sass files ...
-// @include foundation-everything;
-
-// ... or only the ones you need
-// @include foundation-global-styles;
-// @include foundation-grid;
-// @include foundation-typography;
-// @include foundation-button;
-// @include foundation-forms;
-// @include foundation-visibility-classes;
-// @include foundation-float-classes;
-// @include foundation-accordion;
-// @include foundation-accordion-menu;
-// @include foundation-badge;
-// @include foundation-breadcrumbs;
-// @include foundation-button-group;
-// @include foundation-callout;
-// @include foundation-close-button;
-// @include foundation-drilldown-menu;
-// @include foundation-dropdown;
-// @include foundation-dropdown-menu;
-// @include foundation-flex-video;
-// @include foundation-label;
-// @include foundation-media-object;
-// @include foundation-menu;
-// @include foundation-off-canvas;
-// @include foundation-orbit;
-// @include foundation-pagination;
-// @include foundation-progress-bar;
-// @include foundation-slider;
-// @include foundation-sticky;
-// @include foundation-reveal;
-// @include foundation-switch;
-// @include foundation-table;
-// @include foundation-tabs;
-// @include foundation-thumbnail;
-// @include foundation-title-bar;
-// @include foundation-tooltip;
-// @include foundation-top-bar;
-
-
 // Load normalize.css
-@include -zf-normalize;
+// @import 'vendor/normalize';
 
 // Import your own partials here
 @import
   'utility/variables',
-  'utility/mixins',
+  'utility/helpers',
   'utility/susy_map',
+  'lanyon',
   'base/globals',
-  // 'layout/header',
-  // 'layout/content',
+  'base/grid',
+  'base/headings',
+  'base/buttons',
+  'base/animations',
+  'layout/header',
+  'layout/navigation',
+  'layout/content',
   // 'layout/sidebar',
-  // 'layout/footer'
-  'layout/header-content-footer'
+  // 'layout/footer',
+  'modules/nav-toggle',
+  'modules/nav-overlay',
+  'modules/teaser',
+  // 'modules/heading-anchors',
+  // 'modules/contact-form',
+  'modules/beam-me-up',
+  'modules/timeline',
+  // 'modules/terminal',
+  'vendor/frend_tabs',
+  'vendor/syntax-zenburn'
 ;
-
-@include foundation-sticky;
-
-// These styles are applied to a <meta> tag, which is read by the Foundation JavaScript
-.foundation-mq {
-  font-family: '#{-zf-bp-serialize($breakpoints)}';
-}

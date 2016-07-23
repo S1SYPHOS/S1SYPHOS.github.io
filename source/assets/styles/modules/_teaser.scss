@@ -1,0 +1,31 @@
+//
+// Teaser
+//
+
+.teaser {
+  height: calc(100vh - 95px);
+  background: url('/assets/images/teaser_new.jpg') no-repeat center center fixed;
+  background-size: cover;
+  align-items: center;
+
+  @include respond-min(medium) {
+    height: calc(100vh - 125px);
+  }
+
+  &_heading {
+    font: 32px/1.75 M, monospace;
+    color: color(lightGrey);
+
+    @include respond-min(small) {
+      font-size: 36px;
+    }
+
+    @include respond-min(medium) {
+      font-size: 48px;
+    }
+
+    @include respond-min(large) {
+      font-size: 64px;
+    }
+  }
+}

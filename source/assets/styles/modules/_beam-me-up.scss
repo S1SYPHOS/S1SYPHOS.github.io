@@ -1,0 +1,30 @@
+//
+// Beam me up! (Back to top)
+//
+
+.beam-me-up {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  width: 46px;
+  height: 46px;
+  background: color(lightGrey);
+  z-index: z(header);
+  cursor: pointer;
+  border-radius: 3px;
+
+  &.is-visible {
+    visibility: visible;
+    opacity: 0.25;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

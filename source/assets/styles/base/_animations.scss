@@ -1,0 +1,15 @@
+//
+// Animations
+//
+
+[data-aos="fadeIn"] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition-duration: 0.4s;
+  transition-property: opacity, transform;
+}
+
+[data-aos="fadeIn"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}

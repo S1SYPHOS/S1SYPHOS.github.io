@@ -2,6 +2,7 @@
   "dependencies": {
     "main.js": {
       "files": [
+        "scripts/vendor/frend_tabs.js",
         "scripts/main.js"
       ],
       "main": true
@@ -10,9 +11,6 @@
       "files": [
         "styles/main.scss"
       ]
-    },
-    "jquery.js": {
-      "bower": ["jquery"]
     }
   },
   "paths": {

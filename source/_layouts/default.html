@@ -1,40 +1,31 @@
-<!doctype html>
-<html lang="de">
+<!DOCTYPE html>
+<html class="no-js" lang="de">
 
   {% include head.html %}
 
   <body>
 
-    <header role="banner">
-      <nav class="primary-nav" role="navigation">
-        {% include nav.html %}
-      </nav>
-    </header>
+    {% include header.html %}
 
-    <main role="main">
-      <article id="content" >
-        {{ content }}
-      </article>
-
-      {% include sidebar.html %}
-
+    <main class="site-content">
+      {{ content }}
     </main>
 
+    <!-- {% include footer.html %} -->
 
-    <footer role="contentinfo">
-    	<div class="container">
-    		<h2>insert contact stuff</h2>
-    	</div>
-    </footer>
+    <a data-scroll id="js-beam-me-up" class="beam-me-up" href="#site-header">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="32" viewBox="0 0 20 32">
+        <path fill="#404640" d="M10 8L0 18l4 4 6-6 6 6 4-4L10 8z"/>
+      </svg>
+    </a>
 
-    <!-- inject:js -->
-    <script src="/assets/scripts/jquery.js"></script>
+    <!-- inject:js
     <script src="/assets/scripts/main.js"></script>
-    <!-- endinject -->
+    endinject -->
 
-    <!-- <script type="text/javascript">
-      $(document).foundation();
-    </script> -->
+    <script type="text/javascript">
+      {% include main.js %}
+    </script>
 
   </body>
 </html>

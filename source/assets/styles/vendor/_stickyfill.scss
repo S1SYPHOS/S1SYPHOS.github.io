@@ -1,0 +1,13 @@
+//
+// Stickyfill -- https://github.com/wilddeer/stickyfill
+//
+
+.sticky {
+  position: sticky;
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+}

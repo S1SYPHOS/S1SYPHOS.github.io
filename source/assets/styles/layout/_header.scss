@@ -1,3 +1,56 @@
 //
 // Header
 //
+
+.site-header {
+  flex: none;
+  position: fixed;
+  width: 100%;
+  padding: 7px 20px;
+  z-index: z(header);
+  background: color(white);
+  transition: .3s;
+  border-bottom: 1px solid color(lightGrey);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respond-min(medium) {
+    &.is-maximized {
+      padding: 12px 20px;
+
+      .logo--two-brain-with-brand {
+        width: 350px;
+        height: 100px;
+      }
+
+      .logo--two-brain-only {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
+
+.logo {
+  display: block;
+  transition: .3s;
+
+  &--two-brain-with-brand {
+    width: 300px;
+    height: 80px;
+
+    @include respond-max(smallMax) {
+      display: none;
+    }
+  }
+
+  &--two-brain-only {
+    width: 80px;
+    height: 80px;
+
+    @include respond-min(small) {
+      display: none;
+    }
+  }
+}
