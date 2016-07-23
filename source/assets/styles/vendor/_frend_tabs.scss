@@ -1,0 +1,37 @@
+//
+// Frend Tabs
+//
+
+/* Container */
+.tabs {
+}
+
+/* Tablist */
+.tabs_tablist {
+}
+
+.tabs--is-ready .tabs_tablist-item {
+	display: inline;
+}
+
+.tabs_tab {
+}
+.tabs_tab[tabindex="0"] {
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to   {
+    opacity: 1;
+  }
+}
+
+/* Tabpanel */
+.tabs_panel {
+  animation: fadein 2s;
+}
+.tabs_panel[aria-hidden="true"] {
+	display: none;
+}

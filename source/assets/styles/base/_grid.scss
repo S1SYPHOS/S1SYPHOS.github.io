@@ -1,0 +1,30 @@
+//
+// flex  grid
+//
+
+.flex {
+  display: flex;
+
+  &--column {
+    flex-flow: column nowrap;
+  }
+
+  &--center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--space-around {
+    justify-content: space-around;
+  }
+}
+
+@include respond-min(medium) {
+  .one_half {
+    width: span(1 of 2);
+  }
+
+  .one_third {
+    width: span(1 of 3);
+  }
+}

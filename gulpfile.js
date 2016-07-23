@@ -18,29 +18,40 @@ var reload = browserSync.reload;
 // 'autoprefixer' -- Parse CSS and add vendor prefixes to rules by Can I Use
 // https://github.com/postcss/autoprefixer
 var autoprefixer = require('autoprefixer');
+// 'postcss-focus' -- PostCSS plugin to add :focus selector to every :hover for keyboard accessibility
+// https://github.com/postcss/postcss-focus
+var hover2focus = require('postcss-focus');
 // 'postcss-merge-rules' -- Merge CSS rules
 // https://github.com/ben-eb/postcss-merge-rules
-var mergeCss     = require('postcss-merge-rules');
+var mergeCss = require('postcss-merge-rules');
 // 'css-mqpacker' -- Pack same CSS media query rules into one media query rule
 // https://github.com/hail2u/node-css-mqpacker
-var mqpacker     = require('css-mqpacker');
+var mqpacker = require('css-mqpacker');
 // 'postcss-pxtorem' -- Convert pixel units to rem (root em) units
 // https://github.com/cuth/postcss-pxtorem
-var pxtorem      = require('postcss-pxtorem');
+var pxtorem = require('postcss-pxtorem');
 // 'processors' - Contains all PostCSS module options
-var processors   = [
+
+var processors = [
   autoprefixer({browsers: [
     'last 2 versions',
     'ie >= 9',
     'and_chr >= 2.3'
   ]}),
-  mergeCss,
-  mqpacker,
+  // hover2focus,
+  // mergeCss,
+  // mqpacker,
   pxtorem({
+    selectorBlackList: ['html'],
     prop_white_list: [],
+    rootValue: 20,
     replace: false
   })
 ];
+
+//
+// Credits to the guys @ roots: https://github.com/roots/sage
+//
 
 // # Asset-Builder-- https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./source/assets/manifest.json');
@@ -126,7 +137,7 @@ gulp.task('styles', gulp.series('wiredep', function() {
             title: 'minified styles',
             showFiles: true
         })))
-        .pipe($$.if(argv.prod, $$.rev()))
+        // .pipe($$.if(argv.prod, $$.rev()))
         // .pipe($$.if(argv.prod, $$.gzip({
         //     preExtension: 'gz'
         // })))
@@ -142,6 +153,7 @@ gulp.task('styles', gulp.series('wiredep', function() {
   });
   return merged
     .pipe(gulp.dest(path.dist + 'styles'))
+    .pipe(gulp.dest('source/_includes'))
     .pipe($$.if(argv.prod, $$.gzip()))
     .pipe($$.if(argv.prod, $$.size({
       title: 'gzipped styles',
@@ -188,7 +200,7 @@ gulp.task('scripts', function() {
           title: 'minified scripts',
           showFiles: true
         })))
-        .pipe($$.if(argv.prod, $$.rev()))
+        // .pipe($$.if(argv.prod, $$.rev()))
         // .pipe($$.if(argv.prod, $$.gzip({
         //   preExtension: 'gz'
         // })))
@@ -205,6 +217,7 @@ gulp.task('scripts', function() {
   });
   return merged
     .pipe(gulp.dest(path.dist + 'scripts'))
+    .pipe(gulp.dest('source/_includes'))
     .pipe($$.if(argv.prod, $$.gzip()))
     .pipe($$.if(argv.prod, $$.size({
       title: 'gzipped scripts',
@@ -319,19 +332,19 @@ gulp.task('check', gulp.series('jekyll:doctor', 'jsHint', 'scssLint'));
 // ## Cleaning Section
 // 'gulp clean:assets' -- deletes all assets except for images
 gulp.task('clean:assets', function(done) {
-  del(['.tmp/**/*', 'build/assets'], done);
+  return del(['.tmp/**/*', 'build/assets'], done);
 });
 // 'gulp clean:dist' -- erases the dist folder
 gulp.task('clean:dist', function(done) {
-  del(['build/'], done);
+  return del(['build/'], done);
 });
 // 'gulp clean:gzip' -- erases all the gzipped files
 gulp.task('clean:gzip', function(done) {
-  del(['build/**/*.gz'], done);
+  return del(['build/**/*.gz'], done);
 });
 // 'gulp clean:metadata' -- deletes the metadata file for Jekyll
 gulp.task('clean:metadata', function(done) {
-  del(['source/.jekyll-metadata'], done);
+  return del(['source/.jekyll-metadata'], done);
 });
 // 'gulp clean' -- erases your assets and gzipped files
 gulp.task('clean', gulp.series('clean:assets', 'clean:gzip'));
@@ -378,7 +391,7 @@ gulp.task('serve', function() {
 
   // Watch various files for changes and do the needful
   gulp.watch(['source/**/*.md', 'source/**/*.html', 'source/**/*.yml'], gulp.series('jekyll', reload));
-  gulp.watch(['source/**/*.xml', 'source/**/*.txt'], gulp.series('jekyll', reload));
+  gulp.watch(['source/**/*.xml', 'source/**/*.svg', 'source/**/*.txt'], gulp.series('jekyll', reload));
   gulp.watch([path.source + 'styles/**/*'], gulp.series('styles', reload));
   gulp.watch([path.source + 'scripts/**/*'], gulp.series('jsHint', 'scripts', reload));
   gulp.watch([path.source + 'fonts/**/*'], gulp.series('fonts', reload));

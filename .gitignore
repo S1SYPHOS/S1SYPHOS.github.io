@@ -6,4 +6,5 @@ bower_components
 Gemfile.lock
 source/.jekyll-metadata
 build
-/.bundle/config
+workbench
+.bundle

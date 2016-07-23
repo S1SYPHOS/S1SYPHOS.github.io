@@ -1,0 +1,71 @@
+//
+// Footer contact form
+//
+
+.contact-form {
+  padding-top: 15px;
+  font-size: 16px;
+
+  &--input,
+  &--textarea {
+    background: transparent;
+    transition: 0.3s;
+    border: 2px solid darken(color(darkGrey), 2%);
+    border-radius: $global-radius;
+    padding: 8px 10px;
+    font: inherit;
+    color: color(lightGrey);
+
+    &:hover {
+      background: darken(color(darkGrey), 2%);
+      border: 2px solid darken(color(darkGrey), 2%);
+      cursor: pointer;
+    }
+  }
+
+  &--input {
+    width: 95%;
+  }
+
+  &_name {
+    width: 45%;
+    float: left;
+  }
+
+  &_mail {
+    width: 55%;
+    float: right;
+  }
+
+  &--textarea {
+    height: 100px;
+    resize: none;
+    margin: 15px 0;
+    width: 97.5%;
+
+    &:focus {
+      height: 250px;
+    }
+  }
+
+  &--button {
+    transition: 0.3s;
+    border-radius: 5px;
+    box-shadow: none;
+    outline: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid color(lightGrey);
+    font-weight: 700;
+    color: color(lightGrey);
+
+    &:hover {
+      border-color: color(lightGrey);
+      background: color(lightGrey);
+      color: color(darkGrey);
+    }
+  }
+}

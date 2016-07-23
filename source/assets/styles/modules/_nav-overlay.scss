@@ -1,0 +1,56 @@
+//
+// Nav overlay
+//
+
+.js-nav-overlay {
+
+  @include respond-max(largeMax) {
+    background: color(accent);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    padding-top: 100px;
+    color: color(white);
+    left: 0;
+    top: 0;
+    z-index: 100;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .5s cubic-bezier(0, 1, 0.5, 1);
+  }
+
+  &--is-open {
+    // overflow: hidden;
+
+    .js-nav-overlay {
+      transform: scaleY(1);
+    }
+
+    .nav-toggle::before {
+      display: none;
+    }
+
+    .nav-toggle_icon {
+      background: 0 0;
+
+      &::after,
+      &::before {
+        width: 28px;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+        transform-origin: 0 0;
+        right: -6px;
+        top: -9px;
+      }
+
+      &::after {
+        transform-origin: 0 100%;
+        transform: rotate(-45deg);
+        right: -6px;
+        top: 9px;
+      }
+    }
+  }
+}
