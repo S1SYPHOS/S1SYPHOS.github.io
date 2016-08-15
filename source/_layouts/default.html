@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="de">
+<html class="no-js" lang="de_DE">
 
   {% include head.html %}
 
@@ -11,21 +11,7 @@
       {{ content }}
     </main>
 
-    <!-- {% include footer.html %} -->
-
-    <a data-scroll id="js-beam-me-up" class="beam-me-up" href="#site-header">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="32" viewBox="0 0 20 32">
-        <path fill="#404640" d="M10 8L0 18l4 4 6-6 6 6 4-4L10 8z"/>
-      </svg>
-    </a>
-
-    <!-- inject:js
-    <script src="/assets/scripts/main.js"></script>
-    endinject -->
-
-    <script type="text/javascript">
-      {% include main.js %}
-    </script>
+    {% include foot.html %}
 
   </body>
 </html>

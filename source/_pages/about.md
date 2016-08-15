@@ -1,7 +1,11 @@
 ---
 layout: default
-title: S1SYPHOS
-slug: about
+title: About
 permalink: /about/
 ---
-<p>About me -- but what to say?</p>
+
+# About
+
+[Home]({{site.baseurl}}/)
+
+Find me in about.md

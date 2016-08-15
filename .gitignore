@@ -1,11 +1,8 @@
-.publish
-.tmp
-.sass-cache
 node_modules
 bower_components
 Gemfile.lock
-source/lanyon-master
-source/.jekyll-metadata
 build
 workbench
-.bundle
+source/assets/css
+source/assets/js
+source/assets/images

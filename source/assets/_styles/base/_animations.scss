@@ -1,0 +1,28 @@
+//
+// Animations
+//
+
+[data-aos="fadeIn"] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition-duration: 0.3s;
+  transition-property: opacity, transform;
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-aos="fadeIn"] .step_category::before,
+[data-aos="fadeIn"] .step_title::before {
+  opacity: 0;
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-delay: 0.5s;
+}
+
+[data-aos="fadeIn"].aos-animate .step_category::before,
+[data-aos="fadeIn"].aos-animate .step_title::before {
+  opacity: 1;
+}

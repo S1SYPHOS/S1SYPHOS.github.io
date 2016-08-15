@@ -6,8 +6,7 @@
   <title>{{ page.title }} - {{ site.title }}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/styles/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="shortcut icon" href="{{ favicon.ico | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url">
-  <!-- <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico"> -->
+  <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
 </head>

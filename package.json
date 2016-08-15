@@ -1,67 +1,63 @@
 {
   "name": "S1SYPHOS.github.io",
-  "version": "1.0.0",
-  "author": "S1SYPHOS <schmardt@posteo.se>",
+  "version": "1.0.1",
+  "author": "S1SYPHOS",
   "homepage": "http://daktylos.net",
-  "private": true,
+  "licenses": {
+    "type": "MIT",
+    "url": "http://opensource.org/licenses/MIT"
+  },
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "gulp test",
+    "build": "gulp build --production",
+    "imagemin": "gulp imagemin",
+    "production": "gulp --production",
+    "sass": "gulp sass",
+    "server": "gulp server",
+    "server-production": "gulp server --production"
+  },
+  "keywords": [
+    "Autoprefixer",
+    "Bitters",
+    "Bourbon",
+    "Browsersync",
+    "gulp",
+    "imagemin",
+    "Jekyll",
+    "Neat",
+    "PostCSS",
+    "Sass",
+    "Webpack"
+  ],
+  "dependencies": {
+    "aos": "^2.0.4",
+    "gumshoe": "github:cferdinandi/gumshoe",
+    "smooth-scroll": "github:cferdinandi/smooth-scroll"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-newer": "^1.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.5.4",
+    "gulp-watch": "^4.3.8",
+    "imagemin-pngquant": "^5.0.0",
+    "postcss-pxtorem": "^3.3.1",
+    "vinyl-named": "^1.1.0",
+    "webpack-stream": "^3.2.0",
+    "yargs": "^4.8.1"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/S1SYPHOS/S1SYPHOS.github.io.git"
   },
   "bugs": {
     "url": "https://github.com/S1SYPHOS/S1SYPHOS.github.io/issues"
-  },
-  "licenses": {
-    "type": "MIT",
-    "url": "http://opensource.org/licenses/MIT"
-  },
-  "scripts": {
-    "build": "bower install && gulp",
-    "jshint": "gulp jshint",
-    "jscs": "jscs gulpfile.js assets/scripts/*.js"
-  },
-  "engines": {
-    "node": ">= 0.12.0",
-    "npm": ">=2.1.5"
-  },
-  "devDependencies": {
-    "asset-builder": "^1.1.0",
-    "autoprefixer": "^6.3.7",
-    "browser-sync": "^2.13.0",
-    "css-mqpacker": "^5.0.1",
-    "del": "^2.2.1",
-    "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-changed": "^1.3.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-flatten": "0.3.0",
-    "gulp-gh-pages": "^0.5.4",
-    "gulp-gzip": "^1.4.0",
-    "gulp-htmlmin": "^2.0.0",
-    "gulp-if": "^2.0.1",
-    "gulp-imagemin": "^3.0.1",
-    "gulp-inject": "^4.1.0",
-    "gulp-jshint": "^2.0.1",
-    "gulp-load-plugins": "^1.2.4",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.1.1",
-    "gulp-rev": "^7.1.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-series": "^1.0.2",
-    "gulp-size": "^2.1.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.4",
-    "imagemin-pngcrush": "^5.0.0",
-    "jshint": "^2.9.2",
-    "jshint-stylish": "^2.2.0",
-    "lazypipe": "^1.0.1",
-    "merge-stream": "^1.0.0",
-    "minimist": "^1.2.0",
-    "postcss-focus": "^1.0.0",
-    "postcss-merge-rules": "^2.0.10",
-    "postcss-pxtorem": "^3.3.1",
-    "shelljs": "^0.7.0",
-    "traverse": "^0.6.6",
-    "wiredep": "^4.0.0"
   }
 }

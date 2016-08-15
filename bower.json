@@ -8,10 +8,7 @@
   "private": true,
   "dependencies": {
     "susy": "~2.2.12",
-    "gumshoe": "https://github.com/cferdinandi/gumshoe.git#^3.1.2",
-    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#^9.1.4",
-    "normalize-css": "^4.1.1",
-    "aos": "^2.0.4"
+    "normalize-css": "^4.1.1"
   },
   "devDependencies": {
     "loadcss": "~0.1.8",
