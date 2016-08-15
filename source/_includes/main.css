@@ -816,7 +816,7 @@ h4, h5, h6 {
   height: 4rem;
 }
 
-@media (max-width: 29.938em) {
+@media (max-width: 39.938em) {
   .logo--two-brain-with-brand {
     display: none;
   }
@@ -829,7 +829,7 @@ h4, h5, h6 {
   height: 4rem;
 }
 
-@media (min-width: 30em) {
+@media (min-width: 40em) {
   .logo--two-brain-only {
     display: none;
   }
