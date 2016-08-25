@@ -2,15 +2,15 @@
 // Nav overlay
 //
 
+.suck {
+  display: none;
+}
+
 .js-nav-overlay {
 
   @include respond-max(largeMax) {
-    background: color(accent);
     position: fixed;
-    height: 100%;
-    width: 100%;
-    padding-top: 100px;
-    color: color(white);
+    padding-top: $header-height-small;
     left: 0;
     top: 0;
     z-index: 100;
@@ -51,6 +51,10 @@
         right: -6px;
         top: 9px;
       }
+    }
+
+    .suck {
+      display: block;
     }
   }
 }

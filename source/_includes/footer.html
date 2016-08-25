@@ -1,0 +1,39 @@
+<footer class="site-footer has-bgc--dark flex row-to-column center between" role="contentinfo">
+
+  <div class="legal flex">
+    {% include icons/section-sign.svg %}
+
+    <div class="legal_info flex column between mono-ui">
+      <p>
+        &copy; 2016 - Alle Rechte vorbehalten.
+      </p>
+      <nav class="nav flex has-divider">
+        <a href="#">Kontakt</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">Impressum</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="section-content padding-left">
+    <h4 class="sub-heading">Neues aus unserem Blog</h4>
+    <p>Adipiscing viverra platea orci aliquam malesuada duis fringilla. Varius ridiculus ullamcorper gravida libero sapien nam.</p>
+    <a data-scroll class="btn mono-ui" href="{{ site.baseurl }}/blog/">
+      Mehr Blog ↦
+    </a>
+    <dl class="margin-top">
+      {% assign posts = (site.posts | where: "best", "true") %}
+      {% for post in posts limit:4 %}
+      <dt class="bullets margin-top">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </dt>
+      <dd>
+        {{ post.excerpt }}
+      </dd>
+      {% endfor %}
+    </dl>
+
+  </div>
+
+  <a class="uberspace has-bg-image" href="https://uberspace.de" title="Uberspace - Hosting on asteroids."></a>
+</footer>

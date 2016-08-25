@@ -1,0 +1,83 @@
+<section id="contact" class="section has-bgc--dark">
+  <header class="section-header flex column center">
+    {% include icons/contact.svg %}
+    <h2>Wir sind bereit - Sie auch?</h2>
+  </header>
+  <div class="container container--small">
+    <h3>Telefon, Mail & Co.</h3>
+    <p>
+      Ob Sie Fragen haben oder gleich loslegen wollen, der erste Schritt ist schnell getan:
+      Erklären Sie uns einfach kurz, worum es in Ihrem Projekt geht und wie wir Ihnen dabei behilflich sein können.
+    </p>
+    <p class="margin-top">Sie erreichen uns</p>
+    <ul>
+      <li class="bullets">telefonisch unter <a href="tel:+1776432322">0177 / 64 32 322</a></li>
+      <li class="bullets">per <a href="mailto:hallo@twobrain.de?subject=Anfrage">Mail</a> (auch <a href="#">verschlüsselt</a>)</li>
+    </ul>
+    <div class="section-subcontent">
+      <h3>Kontaktformular</h3>
+      <p>
+        Sie haben außerdem die Möglichkeit, uns bequem über dieses Kontaktformular eine Nachricht zu schreiben.
+        So erhalten wir bereits einen ersten Eindruck vom Umfang Ihres Projekts - wir können es kaum erwarten!
+      </p>
+    </div>
+    <form class="cform flex column section-subcontent" action="https://formspree.io/schmardt@posteo.se" method="POST">
+      <div class="flex row-to-column">
+        <div class="cform_group flex-container margin-top">
+          <label class="cform_label required" for="Name" required>Name:</label>
+          <input class="cform_field" type="text" name="name" />
+        </div>
+        <div class="cform_group flex-container margin-top">
+          <label class="cform_label required" for="_replyto" required>eMail:</label>
+          <input class="cform_field" type="email" name="_replyto" />
+        </div>
+      </div>
+
+      <div class="flex row-to-column">
+        <div class="cform_group flex-container margin-top">
+          <label class="cform_label" for="Telefon">Telefon:</label>
+          <input class="cform_field" type="text" name="Telefon" />
+        </div>
+
+        <div class="cform_group flex-container margin-top">
+          <label class="cform_label" for="Webseite">Webseite:</label>
+          <input class="cform_field" type="text" name="Webseite">
+        </div>
+      </div>
+
+      <div class="flex row-to-column">
+        <div class="cform_group flex-container margin-top">
+          <label class="cform_label" for="Budget">Budget:</label>
+          <select class="cform_field" name="Budget">
+            <option value="< 500€">&lt; 500€</option>
+            <option value="500€ - 1.000€" selected="selected">500€ - 1.000€</option>
+            <option value="1.000€ - 1.500€">1.000€ - 1.500€</option>
+            <option value="1.500€ - 2.000€">1.500€ - 2.000€</option>
+            <option value="> 2.000€">&gt; 2.000€</option>
+          </select>
+        </div>
+
+        <div class="cform_group flex-container margin-top">
+          <label class="cform_label" for="Job">Art des Jobs:</label>
+          <select class="cform_field" name="Job">
+            <option value="Webdesign">Webdesign</option>
+            <option value="Webdevelopment">Webdevelopment</option>
+            <option value="Android / iOS">Android / iOS</option>
+            <option value="Logo-Design">Logo-Design</option>
+            <option value="Sonstiges">Sonstiges</option>
+          </select>
+        </div>
+      </div>
+
+      <input type="hidden" name="_format" value="plain" />
+      <input type="text" name="_gotcha" style="display:none" />
+
+      <div class="margin-top">
+        <label class="cform_label" for="user_message">Beschreibung:</label>
+        <textarea class="cform_field cform_field--textarea margin-top" name="user_message"></textarea>
+        <input class="btn btn--dark-bg mono-ui" type="submit" value="Senden ↦" />
+      </div>
+
+    </form>
+  </div>
+</section>

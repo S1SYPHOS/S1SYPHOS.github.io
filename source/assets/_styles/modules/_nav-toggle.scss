@@ -3,23 +3,19 @@
 //
 
 .nav-toggle {
-  font: 700 21px M;
+  cursor: pointer;
+  font: 700 21px M, monospace;
   color: color(darkGrey);
   background-color: color(white);
   border: none;
   border-radius: $global-radius;
   z-index: z(space);
   transition: transform .3s;
-  position: relative;
   height: 50px;
   width: 65px;
 
   @include respond-min(large) {
     display: none;
-  }
-
-  &:focus {
-    outline: 0;
   }
 
   &::before {

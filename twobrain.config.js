@@ -40,6 +40,27 @@ module.exports = {
     ]
   },
 
+  pxtorem: {
+    options: {
+      selectorBlackList: ['html', 'site-header', 'two-brain', 'site-content', 'teaser', 'site-footer', 'nav', 'uberspace', 'legal', 'padding-border'],
+      prop_white_list: [],
+      rootValue: 20,
+      replace: true
+    }
+  },
+
+  htmlmin: {
+    options: {
+      removeComments: true,
+      collapseWhitespace: true,
+      removeRedundantAttributes: true,
+      keepClosingSlash: true,
+      minifyCSS: true,
+      minifyJS: true,
+      collapseBooleanAttributes: true,
+      removeAttributeQuotes: true
+    }
+  },
   js: {
     entry: [
       "main.js",

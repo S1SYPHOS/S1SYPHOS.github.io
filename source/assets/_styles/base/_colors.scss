@@ -1,0 +1,50 @@
+//
+// Colors
+//
+
+.has-bgc {
+
+	&--white {
+		background: color(white);
+		fill: color(accent);
+
+		&,
+		a {
+			color: color(darkGrey);
+		}
+	}
+
+	&--red {
+		background: color(accent);
+		color: color(white);
+		fill: color(white);
+
+		a {
+			color: color(white);
+		}
+	}
+
+	&--light {
+		background: color(lightGrey);
+		fill: color(accent);
+	}
+
+	&--dark {
+		background: color(darkGrey);
+		color: color(lightGrey);
+		fill: color(lightGrey);
+
+		&.site-footer {
+			background: color(veryDarkGrey);
+		}
+
+		a {
+			color: color(lightGrey);
+			font-weight: 700;
+
+			&:hover:not(.btn) {
+				text-decoration: underline;
+			}
+		}
+	}
+}

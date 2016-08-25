@@ -4,27 +4,34 @@
 
 .flex {
   display: flex;
+  flex-wrap: wrap;
 
-  &--column {
+  &-container {
+    flex: 1;
+  }
+
+  &.column {
     flex-flow: column nowrap;
   }
 
-  &--center {
+  &.row-to-column {
+    flex-flow: column nowrap;
+
+    @include respond-min(logo-break) {
+      flex-flow: row nowrap;
+    }
+  }
+
+  &.center {
     justify-content: center;
     align-items: center;
   }
 
-  &--space-around {
+  &.around {
     justify-content: space-around;
   }
-}
 
-@include respond-min(medium) {
-  .one_half {
-    width: span(1 of 2);
-  }
-
-  .one_third {
-    width: span(1 of 3);
+  &.between {
+    justify-content: space-between;
   }
 }

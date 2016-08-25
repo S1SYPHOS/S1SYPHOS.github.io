@@ -1,0 +1,64 @@
+//
+// Support classes
+//
+
+.relative {
+	position: relative;
+}
+
+.fullscreen {
+	height: 100%;
+	width: 100%;
+}
+
+.is-centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.padding-left {
+  @include respond-min(logo-break) {
+    padding-left: 30px;
+  }
+}
+
+.padding-right {
+  @include respond-min(logo-break) {
+    padding-right: 30px;
+  }
+}
+
+.margin-top {
+	margin-top: 15px;
+}
+
+.border {
+
+	&-right {
+	  @include respond-min(medium) {
+	    border-right: 1px solid color(lightGrey);
+	  }
+	}
+
+	&-left {
+	  @include respond-min(medium) {
+	    border-left: 1px solid color(lightGrey);
+	  }
+	}
+
+	&-bottom {
+	  border-bottom: 1px solid color(lightGrey);
+	}
+}
+
+.has-bg-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bullets {
+	background: url('/assets/images/bullets.svg') no-repeat left center;
+	padding-left: 20px;
+}

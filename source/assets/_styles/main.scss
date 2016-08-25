@@ -1,39 +1,35 @@
-@charset "utf-8";
+/*
+ * Importing all Sass partials
+ */
+@charset 'utf-8';
 
-// Automatically injected Bower dependencies via wiredep (never manually edit this block)
-// bower:scss
-@import '../../../bower_components/susy/sass/_susy.scss';
-// endbower
-
-// Load normalize.css
-// @import 'vendor/normalize';
-
-// Import your own partials here
 @import
+  'susy.scss',
+  // 'vendor/bourbon/bourbon',
+  // 'vendor/neat/neat',
+  // 'vendor/base/base',
   'utility/variables',
-  'utility/helpers',
+  'utility/functions',
   'utility/susy_map',
-  'lanyon',
+  'base/typography',
   'base/globals',
   'base/grid',
   'base/headings',
   'base/buttons',
+  'base/colors',
   'base/animations',
+  'base/visibility',
+  'base/helper-classes',
   'layout/header',
   'layout/navigation',
   'layout/content',
-  // 'layout/sidebar',
-  // 'layout/footer',
+  'layout/footer',
+  'pages/portfolio',
   'modules/nav-toggle',
   'modules/nav-overlay',
   'modules/teaser',
-  // 'modules/heading-anchors',
-  // 'modules/contact-form',
-  'modules/beam-me-up',
+  'modules/slider',
   'modules/timeline',
-  // 'modules/terminal',
-  'vendor/syntax-zenburn'
-  // 'vendor/bourbon/bourbon',
-  // 'vendor/neat/neat'
-  // 'vendor/base/base' // Bitters
+  'modules/contact-form',
+  'modules/beam-me-up'
 ;

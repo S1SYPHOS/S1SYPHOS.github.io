@@ -1,18 +1,22 @@
-<header id="site-header" class="site-header is-maximized" role="banner">
-  <a href="{{ site.baseurl }}/" title="Home">
+<header id="site-header" class="site-header is-maximized flex between has-bgc--white border-bottom" role="banner">
+  <a data-scroll href="#" title="Home">
     {% include two-brain-with-brand.svg %}
     {% include two-brain-only.svg %}
   </a>
 
-  <div class="js-nav-overlay">
-    <nav id="js-nav" data-gumshoe class="nav nav--primary">
-      <a class="anchor-link" data-scroll href="{{ site.baseurl }}/#leistungen">Leistungen</a>
-      <a class="anchor-link" data-scroll href="{{ site.baseurl }}/#portfolio">Portfolio</a>
-      <a class="anchor-link" data-scroll href="{{ site.baseurl }}/#kontakt">Kontakt</a>
-      <a class="btn btn--mono" data-scroll href="/blog/">Blog</a>
+  <div id="js-nav-overlay" class="js-nav-overlay">
+    <nav id="js-nav" data-gumshoe class="nav nav--primary flex mono-ui">
+      <a data-scroll href="{{ site.baseurl }}/#welcome">Willkommen</a>
+      <a data-scroll href="{{ site.baseurl }}/#portfolio">Portfolio</a>
+      <a data-scroll href="{{ site.baseurl }}/#team">Team</a>
+      <a data-scroll href="{{ site.baseurl }}/#services">Leistungen</a>
+      <a data-scroll href="{{ site.baseurl }}/#contact">Kontakt</a>
     </nav>
+    <div class="suck">
+      <p>Sie erreichen uns telefonisch unter <span class="mono-ui">+49 (0) 177 / 6432322</span> sowie per Mail an <span class="mono-ui">hallo@twobrain.de</span></p>
+    </div>
   </div>
-  <button id="js-nav-toggle" class="nav-toggle">
+  <button id="js-nav-toggle" class="nav-toggle relative">
     <span class="nav-toggle_icon">Menu</span>
   </button>
 </header>

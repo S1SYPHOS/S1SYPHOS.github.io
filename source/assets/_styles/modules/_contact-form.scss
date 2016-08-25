@@ -1,71 +1,40 @@
 //
-// Footer contact form
+// Contact form
 //
 
-.contact-form {
-  padding-top: 15px;
-  font-size: 16px;
+.cform {
+  // margin-right: -15px;
 
-  &--input,
-  &--textarea {
-    background: transparent;
-    transition: 0.3s;
-    border: 2px solid darken(color(darkGrey), 2%);
-    border-radius: $global-radius;
-    padding: 8px 10px;
-    font: inherit;
-    color: color(lightGrey);
+  &_group {
+    margin-right: 15px;
+  }
 
-    &:hover {
-      background: darken(color(darkGrey), 2%);
-      border: 2px solid darken(color(darkGrey), 2%);
-      cursor: pointer;
+
+  &_label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    width: 100%;
+
+    &.required::after {
+      content: 'Pflichtfeld';
+      color: color(accent);
+      font: 700 12px M, monospace;
+      letter-spacing: 1px;
     }
   }
 
-  &--input {
-    width: 95%;
-  }
+  &_field {
+    border-color: color(veryDarkGrey);
+    width: 100%;
+    appearance: none;
+    padding: 10px 12px;
 
-  &_name {
-    width: 45%;
-    float: left;
-  }
-
-  &_mail {
-    width: 55%;
-    float: right;
-  }
-
-  &--textarea {
-    height: 100px;
-    resize: none;
-    margin: 15px 0;
-    width: 97.5%;
-
+    &:hover,
     &:focus {
-      height: 250px;
-    }
-  }
-
-  &--button {
-    transition: 0.3s;
-    border-radius: 5px;
-    box-shadow: none;
-    outline: 0;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 10px 14px;
-    cursor: pointer;
-    background: transparent;
-    border: 2px solid color(lightGrey);
-    font-weight: 700;
-    color: color(lightGrey);
-
-    &:hover {
-      border-color: color(lightGrey);
-      background: color(lightGrey);
-      color: color(darkGrey);
+      background: color(veryDarkGrey);
+      border: 2px solid color(veryDarkGrey);
     }
   }
 }

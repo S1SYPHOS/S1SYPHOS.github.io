@@ -3,22 +3,27 @@
 //
 
 .btn {
+  display: table;
+  margin-top: 20px;
   padding: 10px 12px;
+  color: color(accent);
   border: 2px solid color(lightGrey);
   border-radius: 5px;
-  font-variant: small-caps;
-  color: color(accent);
+  user-select: none;
 
-  &--mono {
-    font: 700 16px M, monospace;
+  &:hover {
+    background: color(lightGrey);
+    color: color(darkGrey);
   }
 
-  &--on-dark {
+  &--dark-bg {
     color: color(lightGrey);
+    background-color: transparent;
   }
 
-  &--on-accent {
-    color: color(white);
+  &--red-bg {
+    // color: color(white);
+    border-color: color(white);
 
     &:hover {
       background: color(white);
@@ -26,16 +31,14 @@
     }
   }
 
-  &:hover {
-    background: color(lightGrey);
-    color: color(darkGrey);
-  }
-}
+  &--success {
+    background: color(success);
+    border-color: darken(color(success), 5%);
+    color: color(white);
 
-.first-step .btn {
-  display: table;
-  margin: 0;
-  background: color(white);
-  color: color(darkGrey);
-  z-index: 15;
+    &:hover {
+      background: darken(color(success), 5%);
+      color: color(white);
+    }
+  }
 }

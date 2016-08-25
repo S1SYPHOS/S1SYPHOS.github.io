@@ -8,14 +8,18 @@ var autoprefixer = require('autoprefixer');
 var browsersync  = require('browser-sync').create();
 var cp           = require('child_process');
 var gulp         = require('gulp');
+var htmlmin      = require('gulp-htmlmin');
 var imagemin     = require('gulp-imagemin');
+var manifest     = require('assets-webpack-plugin');
 var named        = require('vinyl-named');
 var newer        = require('gulp-newer');
+var jshint       = require('gulp-jshint');
 var plumber      = require('gulp-plumber');
 var pngquant     = require('imagemin-pngquant');
 var postcss      = require('gulp-postcss');
 var pxtorem      = require('postcss-pxtorem');
 var sass         = require('gulp-sass');
+var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 var watch        = require('gulp-watch');
 var webpack      = require('webpack-stream');
@@ -28,14 +32,11 @@ var tasks        = [];
 var build        = [];
 var paths        = {};
 var entry        = [];
+
+// Load PostCSS modules
 var processors   = [
   autoprefixer({ browsers: config.autoprefixer.browsers }),
-  pxtorem({
-    selectorBlackList: ['html'],
-    prop_white_list: [],
-    rootValue: 20,
-    replace: true
-  })
+  pxtorem( config.pxtorem.options )
 ];
 
 /**
@@ -105,12 +106,21 @@ gulp.task('server', ['jekyll-build'], function() {
   });
 });
 
+gulp.task('html', function() {
+  return gulp.src('build/**/*.html')
+    .pipe(htmlmin(config.htmlmin.options))
+    .pipe(gulp.dest('build'));
+});
+
 /**
  * Sass
  */
 gulp.task('sass', function () {
   return gulp.src(paths.sass + '/**/*')
-    .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
+    .pipe(sass({
+      outputStyle: config.sass.outputStyle,
+      includePaths: ['./bower_components/susy/sass']
+    }).on('error', sass.logError))
     // .pipe(autoprefixer({ browsers: config.autoprefixer.browsers }))
     .pipe(postcss(processors))
     .pipe(gulp.dest(paths.css));
@@ -132,16 +142,40 @@ gulp.task('imagemin', function () {
 });
 
 /**
+ * Linting JS
+ */
+
+gulp.task('jshint', function() {
+  return gulp.src(paths.jsSrc + '/**/**/*')
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'))
+});
+
+/**
  * Webpack
  *
  * Bundle JavaScript files
  */
-gulp.task('webpack', function () {
+gulp.task('webpack', ['jshint'], function () {
   return gulp.src(entry)
     .pipe(plumber())
     .pipe(named())
     .pipe(webpack({
       watch: argv.watch ? true : false,
+      output: {
+        filename: 'main.[hash].js'
+      },
+      resolve: {
+        modulesDirectories: ['node_modules', 'bower_components'],
+      },
+      plugins: [
+        new manifest({
+          filename: 'assets.json',
+          path: './source/_data',
+          // fullPath: false,
+          prettyPrint: true
+        })
+      ]
     }))
     .pipe(uglify())
     .pipe(gulp.dest(paths.js));
@@ -190,6 +224,8 @@ gulp.task('default', tasks, function () {
       '!./node_modules/**/*',
       '!./README.md',
       '!' + paths.dest + '/**/*',
+      'gulpfile.js',
+      'twobrain.config.js',
       'source/_includes/**/*',
       'source/_layouts/**/*',
       'source/_pages/**/*',

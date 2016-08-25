@@ -17,35 +17,17 @@ $breakpoints: (
   largeMax: 63.938em,
   large: 64em,
   xlarge: 80em,
-  xxlarge: 1440px,
   logo-breakMax: 39.938em,
   logo-break: 40em
 );
 
-
-
-/*
-20px base
-
-*/
-// $breakpoints: (
-//   smallMax: 23.95em,
-//   small: 24em,
-//   mediumMax: 38.35em,
-//   medium: 38.4em,
-//   largeMax: 51.15em,
-//   large: 51.2em,
-//   xlarge: 64em,
-//   xxlarge: 1440px,
-// );
-
 $colors: (
-  primary: #26a926,
-  accent: #d32f2f,
-  darkGrey: #404640,
-  lightGrey: #f0f0f0,
   white: #fff,
-  black: #000
+  accent: #d32f2f,
+  lightGrey: #f0f0f0,
+  darkGrey: #404640,
+  veryDarkGrey: #3b413b,
+  success: #26a926,
 );
 
 $z-layers: (
@@ -60,3 +42,25 @@ $global-radius: 5px;
 $global-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 
 $font-stack: G, sans-serif;
+
+// Timeline
+$timeline-diameter-big: 26px;
+$timeline-diameter-small: 12px;
+$timeline-step-padding: $timeline-diameter-big + 10px;
+
+// Section logo
+$section-logo-diameter: 72px;
+
+$logo-height-big: 100px;
+$logo-height-small: 80px;
+
+$header-height-big: 124px + 1px; // bottom border
+$header-height-small: 99px + 1px; // bottom border
+
+$header-padding-big: ($header-height-big - $logo-height-big) / 2;
+$header-padding-small: ($header-height-small - $logo-height-small) / 2;
+
+$nav-separation-margin: 0.75em;
+
+$section-sign-margin: 0 20px 0 0;
+$section-sign-diameter: 56px;
