@@ -17,9 +17,7 @@
       position: relative;
     }
 
-    &.loading {
-      background: url('/assets/images/ajax-loader.gif') no-repeat center center;
-    }
+
   }
 
   &_image {
@@ -60,11 +58,14 @@
   transition: 0.3s;
   opacity: 0;
 
-  &--has-loaded {
-    opacity: 1;
-  }
-
+  &--has-loaded,
   .no-js & {
     opacity: 1;
   }
+}
+
+.loading {
+  color: transparent;
+  border-color: color(veryDarkGrey);
+  background: url('/assets/images/icons/ajax-loader.gif') no-repeat center center;
 }

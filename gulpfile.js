@@ -146,7 +146,7 @@ gulp.task('imagemin', function () {
  */
 
 gulp.task('jshint', function() {
-  return gulp.src(paths.jsSrc + '/**/**/*')
+  return gulp.src(paths.jsSrc + '/**/*')
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
 });
@@ -177,7 +177,7 @@ gulp.task('webpack', ['jshint'], function () {
         })
       ]
     }))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest(paths.js));
 });
 

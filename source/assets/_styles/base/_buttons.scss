@@ -7,9 +7,10 @@
   margin-top: 20px;
   padding: 10px 12px;
   color: color(accent);
-  border: 2px solid color(lightGrey);
+  border: 3px solid color(lightGrey);
   border-radius: 5px;
   user-select: none;
+  transition: 0.3s;
 
   &:hover {
     background: color(lightGrey);
@@ -36,9 +37,48 @@
     border-color: darken(color(success), 5%);
     color: color(white);
 
+    &:before {
+      // base64 baby
+      content: url('../images/icons/success.svg');
+      margin-right: 10px;
+    }
+
     &:hover {
       background: darken(color(success), 5%);
       color: color(white);
     }
+  }
+
+  &--error {
+    background: color(accent);
+    border-color: darken(color(accent), 5%);
+    color: color(white);
+
+    &:before {
+      // base64 baby
+      content: url('../images/icons/error.svg');
+      margin-right: 10px;
+    }
+
+    &:hover {
+      background: darken(color(accent), 5%);
+      color: color(white);
+    }
+  }
+
+  &--loading {
+    // display: table;
+    // border: 3px solid color(veryDarkGrey);
+    // border-radius: $global-radius;
+    // margin-top: 20px;
+    // padding: 10px 12px;
+    cursor: default;
+
+
+      &:hover {
+        // color: transparent;
+        // cursor: default;
+        // background: url('/assets/images/ajax-loader.gif') no-repeat center center;
+      }
   }
 }
